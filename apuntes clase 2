@@ -1,0 +1,30 @@
+CLASE 2:
+
+Las sentencias while, if, switch y for son utilizadas de la misma manera que en js.
+
+variable=getch(); *no hace replica en pantalla, pasa a la prox sentencia*
+variable=getche(); *hace replica por pantalla*
+
+es como el prompt para solo un caracter
+
+---------------------------------------------
+
+fflush(stdin);
+
+limpia los caracteres en el buffer
+
+---------------------------------------------
+
+variable=tolower(); *lo pasa en minuscula*
+
+variable=tolower(getche()); *primero se ejecuta el getche, el usuario ingresa el caracter, pasa por el to lower y lo transforma en minuscula, y lo pasa a la 
+variable
+
+variable=toupper(); *lo pasa a mayuscula*
+
+---------------------------------------------
+
+convine usar el for cuando sabemos la cantidad de iteraciones que vamos a tener.
+
+
+\n SALTO DE LINEA
