@@ -1,0 +1,124 @@
+PROGRAMACION:
+DUDAS: 
+*preguntar cuando se usa VOID*
+
+Clase 1:
+
+DEFINIR VARIABLES:
+
+En c para definir una variable se tiene que definir que tipo de dato va a ser (int, char, etc) por ej:
+
+int numero1;
+
+Para hacer operaciones con decimales, se debe definir a la variable como un 'flotante', poniendo float adelante:
+
+float numero1;
+
+Los tipos de datos son:
+
+int______________________Numero entero (4 bytes)
+short int________________Numero entero (2 bytes)
+long long________________Numero entero (8 bytes)
+float____________________Numero con decimales (4 bytes)
+double___________________Numero con decimales (8 bytes)
+char_____________________Un carácter (1 byte)
+void_____________________Sin tipo 
+
+Los signos a utilizar para realizar operaciones son iguales a los usados en js.
+
+MOSTRAR DATOS:
+
+Para mostrar datos en c, en vez de usar console.log o alert se usa printf:
+
+printf("Introduccion a lenguaje c");
+
+Para concatenar un mensaje, en vez de usar + se usa ,:
+
+printf("El resultado es: %d",resultado); *esa %d hace que la variable a mostrar sea un numero decimal*
+
+Los modificadores de formato para el numero que queremos mostrar son:
+
+%d_______________________Imprime un numero entero
+%f_______________________Imprime un numero entero con decimales
+%c_______________________Imprime un caracter
+%s_______________________Imprime un array de caracteres
+
+INGRESO DE DATOS:
+
+En js para que el usuario pueda ingresar datos se debe usar prompt, pero en c esa funcion no existe. Por lo tanto, se usara un printf para mostrar el mensaje
+que el diga al usuario que ingrese datos, y un scanf para poder 'analizar' esa respuesta:
+
+int numero1;
+printf("Ingrese un numero: %d",numero1);
+scanf(%d, &numero1); *se debe poner el simbolo & delante de la variable, se vera en profundidad porque mas adelante*
+
+Para ingresar una cadena de caracteres, en js teniamos instalado el concepto de 'string' pero en c no esta, por lo tanto deberemos usar un 'array' de caracteres,
+que se definira d ela sig manera:
+
+char texto [128]; *char por que son caracteres, y 128 por la cantidad de letras que van a estar dentro del array, se debe definir el maximo*
+
+Cuando debemos 'analizar' un array que ingreso el usuario, debemos poner %s para que sea tomado como una cadena de caracteres:
+
+scanf(%s, texto); *en las variables array no se usa el &*
+
+Y para imprimir lo ingresado por el usuario, se utiliza el printf de la siguiente manera:
+
+printf("Ingresaste el siguiente texto: %s", texto);
+
+OPERACIONES LOGICAS Y CONTROL DE FLUJO:
+
+En c, para juzgar si una variable tiene valor true o false (como era en js), se va a validar si es un 0 o un 1, por ejemplo:
+
+
+float variableA;
+float variableB;
+int resultado;
+variableA = 3.14;
+variableB = 5.5;
+resultado = variableA < variableB;
+printf("Resultado de la comparación: %d",resultado); *siendo el valor 1, por true*
+
+La sentencia if se sigue utilizando de la misma manera que en java script.
+
+FUNCIONES:
+
+En c, el unico cambio que hay en la ultizacion de funciones, es la manera de declararlas. La única diferencia es que se deben aclarar los tipos de datos
+de los argumentos que recibe la función y el tipo de dato del valor que devuelve la función.
+
+Si la funcion no debe devolver ningun argumento, se la debe declarar como void, sacando la palabra function de la sig manera:
+
+void imprimoMensaje(void)
+{
+	printf("Hola mundo");
+}
+
+CLASE 2:
+
+Las sentencias while, if, switch y for son utilizadas de la misma manera que en js.
+
+variable=getch(); *no hace replica en pantalla, pasa a la prox sentencia*
+variable=getche(); *hace replica por pantalla*
+
+es como el prompt para solo un caracter
+
+---------------------------------------------
+
+fflush(stdin);
+
+limpia los caracteres en el buffer
+
+---------------------------------------------
+
+variable=tolower(); *lo pasa en minuscula*
+
+variable=tolower(getche()); *primero se ejecuta el getche, el usuario ingresa el caracter, pasa por el to lower y lo transforma en minuscula, y lo pasa a la 
+variable
+
+variable=toupper(); *lo pasa a mayuscula*
+
+---------------------------------------------
+
+convine usar el for cuando sabemos la cantidad de iteraciones que vamos a tener.
+
+
+\n SALTO DE LINEA
