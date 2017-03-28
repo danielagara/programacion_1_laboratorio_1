@@ -107,6 +107,8 @@ fflush(stdin);
 
 limpia los caracteres en el buffer
 
+cuando pido un caracter por getche/getchar/getch, hacer fflush primero Y DESPUES validar el dato con el while, en el caso de necesitar validarlo.
+
 ---------------------------------------------
 
 variable=tolower(); *lo pasa en minuscula*
@@ -122,3 +124,122 @@ convine usar el for cuando sabemos la cantidad de iteraciones que vamos a tener.
 
 
 \n SALTO DE LINEA
+--------------------------------------------
+
+CLASE 3:
+
+Las funciones son microprogramas que hacen 'algo' con los datos que ingresamos. Los utilizamos cuando tenemos que usar las mismas lineas de codigo varias veces,
+por lo tanto, los modularizamos.
+
+Una vez que declaramos una funcion, podemos usar la misma desde otros programas incluyendo la libreria en la que se encuentra '#nombre de la libreria'.
+
+Funciones de caja negra: no podemos ver el interior de la funcion, como hace para realizar la accion.
+de caja blanca: de codigo libre, se puede volver a utilizar y modificar.
+
+FUNCION PROTOTIPO 1: RECIBE Y DEVUELVE
+
+int main()
+{
+    int num1;
+    int num2;
+    int resultado;
+
+    printf("Ingrese el primer numero ");
+    scanf("%d", &num1);
+
+    printf("Ingrese el segundo numero ");
+    scanf("%d", &num2);
+
+    resultado=sumar(num1, num2);
+    printf("El resultado de la suma es:%d", resultado);
+    return 0;
+}
+
+int sumar(int numero1, int numero2)
+{
+    int resultado;
+    resultado=numero1 + numero2;
+    return resultado;
+}
+
+FUNCION TIPO 2: NO RECIBE, NO DEVUELVE
+
+int main()
+{
+    //CON SEGUNDO TIPO DE FUNCION, SI RECIBE NO DEVUELVE
+    int num1;
+    int num2;
+    int resultado;
+
+    printf("Ingrese el primer numero ");
+    scanf("%d", &num1);
+
+    printf("Ingrese el segundo numero ");
+    scanf("%d", &num2);
+
+    resultado=sumar(num1, num2);
+    return 0;
+}
+void sumar(int num1, int num2)
+{
+    int resultado;
+    resultado=num1+num2;
+
+    printf("El resultado de la suma es: %d", resultado);
+}
+
+FUNCION PROTOTIPO 3: NO RECIBE NI DEVUELVE (DOBLE VOID)
+
+int main()
+{
+    //PROTOTIPO 3: NO RECIBE NI DEVUELVE
+    sumar(); //solo se ejecuta la funcion
+    return 0;
+}
+
+void sumar(void)
+{//se piden todos los datos y se ejecuta todo dentro de la misma
+    int num1;
+    int num2;
+    int resultado;
+
+    printf("Ingrese el primer numero: ");
+    scanf("%d", &num1);
+
+    printf("Ingrese el segundo numero: ");
+    scanf("%d", &num2);
+
+    resultado=num1+num2;
+
+    printf("El resultado de la suma es: %d" , resultado);
+}
+
+FUNCION PROTOTIPO 4:
+
+int sumar(void);
+
+int main()
+{
+    //PROTOTIPO 3: NO RECIBE NI DEVUELVE
+    int resultado;
+    sumar();
+    printf("El resultado de la suma es: %d", resultado);
+    return 0;
+}
+
+int sumar(void)
+{
+    int num1;
+    int num2;
+    int resultado;
+
+    printf("Ingrese el primer numero: ");
+    scanf("%d", &num1);
+
+    printf("Ingrese el segundo numero: ");
+    scanf("%d", &num2);
+
+    resultado=num1+num2;
+
+    return resultado;
+}
