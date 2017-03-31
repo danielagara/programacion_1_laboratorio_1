@@ -6,3 +6,34 @@ generalizaciones:
 2-transitor
 3-circuito integrado
 4-mayor escala de integracion
+
+
+clase 3:
+
+arquitectura de computadoras: integracion del estructura fisica y logica (construida electronicamente y que instrucciones utiliza para 
+funcionar).
+  -arquitectura de von neumann:
+cpu -> e/s-> memoria(instrucciones y datos)
+
+compartir el mismo espacio de pasaje entre instrucciones y datos (cuello de botella), pierde mucho tiempo, ya que primero pasaria por ej la 
+instruccion y una vez que vuelva pasaria el dato y viceversa, o hago uno o hago el otro.
+
+  -arquitectura moderna hardvard:
+  
+proponen 2 tipos de memoria en 2 memorias separadas, con difrentes pasajes uno para memoria de datos y otro para memoria de instrucciones.
+soluciona el problema generado con la arquitectura de von neumann.
+
+  -arquitectura CISC:
+  
+CISC C por complejo (+ bits)
+  
+  -Arquitectuta RISC:
+  
+RISC R por reducido.
+  
+cpu: memoria/buses/ modulo es/ perifericos
+
+componentes principales: 
+-unidad de control: busca las intrucciones en la memoria, y va a ejecutarlas (ej comparaciones). tiene limitaciones.
+-unidad aritmetica logica: realiza operaciones (ej cuentas).
+-registros: pequeñas porciones de mmemoria donde guarda temporalmente instrucciones.
