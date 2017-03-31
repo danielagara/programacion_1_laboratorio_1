@@ -37,3 +37,11 @@ componentes principales:
 -unidad de control: busca las intrucciones en la memoria, y va a ejecutarlas (ej comparaciones). tiene limitaciones.
 -unidad aritmetica logica: realiza operaciones (ej cuentas).
 -registros: pequeñas porciones de mmemoria donde guarda temporalmente instrucciones.
+
+-----------------------------
+
+ley de corriente (o ley de nodos):
+*un nodo es la union de uno o mas componentes*
+la corriente que entra o pasa a tra ves de un nodo es igual a la que sale del mismo.
+ej, en el caso de que un nodo una 3 resistencias, y entre una corriente de 5A, no va a salir 5A por cada componente, si no que se va a di-
+vidir la misma (2,5A y 2,5 A), es decir, que la suma de las corrientes que salgan tiene que igualarse a la cantidad que entra.
