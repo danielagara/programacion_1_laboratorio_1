@@ -45,3 +45,15 @@ ley de corriente (o ley de nodos):
 la corriente que entra o pasa a tra ves de un nodo es igual a la que sale del mismo.
 ej, en el caso de que un nodo una 3 resistencias, y entre una corriente de 5A, no va a salir 5A por cada componente, si no que se va a di-
 vidir la misma (2,5A y 2,5 A), es decir, que la suma de las corrientes que salgan tiene que igualarse a la cantidad que entra.
+
+Si las resistencia estan una a continuación de la otra estan en serie (p/medir corriente)
+Pero si estan en paralelo, vemos que tienen del mismo lado el mismo voltaje (p/medir tension)
+
+Ram: random access memory
+Rom: read only memory
+
+Malla: solo pasa una vez por cada componente, cuando se prueba un circuito primero miramos buscamos las mallas en el mismo.
+
+En serie les pasa la misma cantidad de volt a cada componente y en paralelo se distribuye (creo)
+
+Segunda ley: *buscar*
