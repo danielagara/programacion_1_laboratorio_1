@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1491264816 source:c:\users\alumno\desktop\ejercicio_legajo\main.c
+	<stdio.h>
+	<stdlib.h>
+
