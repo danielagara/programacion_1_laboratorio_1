@@ -242,3 +242,36 @@ int sumar(void)
 
     return resultado;
 }
+
+COMO SE HACEN LAS LIBRERIAS:
+
+Se deben crear 2 archivos nuevos oara acompañar al main (en el que ejecutamos nuestro programa):
+-un archivo .h:
+llevara el prototipo de la funcion (por ej de tipo 1)-> int sumar(int numero1, int numero2)
+pueden incluirse varios prototipo de distintas funciones
+
+-un archivo .c:
+llevara el desarrollo de toda la funcion (sigue con el ejemplo de arriba)-> 
+
+int sumar(int numero1, int numero2)
+{
+    int resultado;
+    resultado=numero1 + numero2;
+    return resultado;
+}
+Al inicio del archivo tambien se debera documentar que hace esa funcion de la sig manera:
+/** \brief |QUE HACE LA FUNCION|
+ *
+ * \param |PARAMETRO 1 QUE USARA|
+ * \param |PARAMETRO 2 QUE USARA|
+ * \return |QUE VA A DEVOLVER 0, 1|
+ *
+ */   
+
+Por ultimo, luego de crear esos 2 archivos, en el archivo main debemos llamar a nuestra biblioteca: #include <stdlib.h> (el nombre
+de la biblioteca seria stdlib.h).
+
+CLASE 5: FALTA AGREGAR ESTA CLASE, TODO LO DE ARRAYS.
+
+CLASE 6:
+Los vectores en paralelo son aquellos que se relacionan, tienen la misma cantidad de componentes.(ejercicio de legajo).
