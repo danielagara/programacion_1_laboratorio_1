@@ -2,13 +2,29 @@
 #include <stdlib.h>
 #define A 10
 
+
+//TERMINAR
+
+typedef struct
+{//estructura
+    int vecLegajo[A];
+    int vecEdad[A];
+    int vecNota[A];
+} eDatos;
+
+void mostrarPersona (eDatos x);
+
 int main()
 {
+    eDatos datosPersona;
     char seguir='s';
     int opcion=0;
-    int i, vecLegajo[A], vecEdad[A], vecNota[A], legBusqueda, notaMax, contador=0, acumNotas=0;
+    int i, u, j, legBusqueda, notaMax, contador=0, acumNotas=0;
+    int disponibilidad=-1, estado=0;
+    char respuesta;
     float promedio;
     char flagBusqueda='n';
+    int contadorGeneral=0;
 
     while(seguir=='s')
     {
@@ -24,32 +40,71 @@ int main()
         switch(opcion)
         {
             case 1:
-                for(i=0; i<A;i++) //para que vaya sumando hasta que llega a los 10 alumnos
+                respuesta='s';
+                while(respuesta!='n')
+                {
+                    /*if(disponibilidad==-1)
+                    {
+                        printf("NO HAY LUGAR");
+                    }
+                    else
+                    {*/
+
+                for(j=0;j<A;j++)
                 {
                     printf("1-Ingrese el numero de legajo\n");
-                    scanf("%d", &vecLegajo[i]);
-                    printf("1-Ingrese la edad\n");
-                    scanf("%d", &vecEdad[i]);
-                    printf("1-Ingrese la nota\n");
-                    scanf("%d", &vecNota[i]);
-                    acumNotas=(acumNotas+vecNota[i]);
+                    scanf("%d", &datosPersona.vecLegajo[j]);
+                    for(i=j+1;i<A;i++)
+                    {
+                        if(datosPersona.vecLegajo[j]!=datosPersona.vecLegajo[i])
+                        {
+
+                            printf("1-Ingrese la edad\n");
+                            fflush(stdin);
+                            scanf("%d", &datosPersona.vecEdad[i]);
+
+                            printf("1-Ingrese la nota\n");
+                            fflush(stdin);
+                            scanf("%d", &datosPersona.vecNota[i]);
+                            acumNotas=(acumNotas+datosPersona.vecNota[i]);
+                            break;
+                        }
+                        else
+                        {
+
+                            printf("EL LEGAJO YA ESTA REGISTRADO");
+
+                        }
+                    }
+                    break;
+                }
+
+                contadorGeneral++;
+                printf("¿Quiere seguir ingresando datos? s o n", respuesta);
+                fflush(stdin);
+                scanf("%c", &respuesta);
                 }
                 break;
 
             case 2:
+
                 printf("Ingrese el numero del legajo a buscar\t");
                 scanf("%d", &legBusqueda);
-                if(legBusqueda==vecLegajo[i])
+                for(j=0;j<A;j++)
                 {
-                    printf("%d\t%d\t%d\n", vecLegajo[i], vecEdad[i], vecNota[i]);
-                    flagBusqueda='s';
-                }
-                else
-                {
-                    if(flagBusqueda=='n')
+                    if(legBusqueda==datosPersona.vecLegajo[j])
                     {
-                        printf("No se encontro legajo");
+                        mostrarPersona(datosPersona);
+                        flagBusqueda='s';
                     }
+                    else
+                    {
+                        if(flagBusqueda=='n')
+                        {
+                            printf("No se encontro legajo");
+                        }
+                    }
+
                 }
                 break;
 
@@ -58,37 +113,38 @@ int main()
                 {
                     if(contador==0)
                     {
-                        notaMax=vecNota[i];
+                        notaMax=datosPersona.vecNota[i];
                     }
                     else
                     {
-                        if(vecNota[i]>notaMax)
+                        if(datosPersona.vecNota[i]>notaMax)
                         {
-                            notaMax=vecNota[i];
+                            notaMax=datosPersona.vecNota[i];
                         }
                     }
 
-                    if(vecNota[i]==notaMax)
+                    if(datosPersona.vecNota[i]==notaMax)
                     {
-                        printf("%d\t%d\t%d\n", vecLegajo[i], vecEdad[i], vecNota[i]);
+                        mostrarPersona(datosPersona);
                     }
                 }
                 break;
 
             case 4:
-                promedio=(acumNotas/A);
-                for(i=0;i<A;i++)
+                promedio=(acumNotas/contadorGeneral);
+                for(i=0;i<contadorGeneral;i++)
                 {
-                    if(vecNota[i]>promedio)
+                    if(datosPersona.vecNota[i]>promedio)
                     {
-                        printf("%d\t%d\t%d\n", vecLegajo[i], vecEdad[i], vecNota[i]);
+                        mostrarPersona(datosPersona);
                     }
                 }
                 break;
+
             case 5:
-                for(i=0;i<A;i++)
+                for(i=0;i<contadorGeneral;i++)
                 {
-                    printf("%d\t%d\t%d\n", vecLegajo[i], vecEdad[i], vecNota[i]);
+                    mostrarPersona(datosPersona);
                 }
                 break;
             case 6:
@@ -100,3 +156,16 @@ int main()
     }
     return 0;
 }
+
+void mostrarPersona (eDatos x)
+{
+    int i;
+    for(i=0;i<A;i++)
+    {
+        printf("\n\nLEGAJO:\n\n%d ", x.vecLegajo[i]);
+        printf("\n\nEDAD:\n\n%d ", x.vecEdad[i]);
+        printf("\n\NOTA:\n\n%d ", x.vecNota[i]);
+    }
+
+}
+
