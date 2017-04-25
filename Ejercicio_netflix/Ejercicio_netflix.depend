@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1493080728 source:c:\users\alumno\desktop\ejercicio_netflix\main.c
+	<stdio.h>
+	<stdlib.h>
+
