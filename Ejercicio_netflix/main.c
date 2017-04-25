@@ -49,7 +49,7 @@ void mostrarSerie(eSerie series[]);
 void mostrarClientesConSerie(eCliente clientes[], eSerie series[]);
 void mostrarSeriesConClientes(eCliente clientes[], eSerie series[], int cant, int segcant);
 void mostrarSerieLoser(eCliente x[], eSerie y[], int, int);
-void mostrarClientesTBBT(eCliente x[], eSerie y[], int, int);
+void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int cant2);
 
 
 int main()
@@ -84,11 +84,11 @@ int main()
         mostrarSeriesConClientes(clientes, series, 10, 5);
         break;
 
-        /*case 4:
-        mostrarClientesTBBT(clientes, series, C, S);
+        case 4:
+        mostrarClientesTBBT(clientes, series, 10, 5);
         break;
 
-        case 5:
+        /*case 5:
         mostrarSerieLoser(clientes, series, C, S);
         break;*/
     }
@@ -193,29 +193,33 @@ void mostrarClientesConSerie(eCliente clientes[], eSerie series[])
 
 void mostrarSeriesConClientes(eCliente clientes[], eSerie series[], int cant, int segcant)
 {
-    /*int j, i;
-    for(j=0;j<cant;j++)
-    {
-        for(i=0;i<segcant;i++)
-        {
-            if(clientes[j].idSerie==series[j].idSerie)
-            {
-                printf("\n\nID SERIE\n\n%s ", series[j].idSerie);
-                printf("\n\nNOMBRE:\n\n%d ", clientes[j].nombre);
-            }
-        }
-
-    }*/
-
     int j, i;
-    for(j=0;j<cant;j++)
+    for(i=0;i<5;i++)
     {
-        for(i=0;i<segcant;i++)
+        for(j=0;j<10;j++)
         {
-            if(series[j].idSerie==clientes[j].idSerie)
+            if(clientes[j].idSerie==series[i].idSerie)
             {
-                printf("\n\nID SERIE:\n\n%s ", series[j].idSerie);
-            printf("\n\nNOMBRE:\n\n%d ", clientes[j].nombre);
+                printf("\n\nID SERIE:\n\n%d ", series[i].idSerie);
+                printf("\n\nNOMBRE:\n\n%s ", clientes[j].nombre);
+            }
+
+        }
+    }
+}
+
+void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int cant2)
+{
+    int j, i;
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<10;j++)
+        {
+            while(clientes[j].idSerie==100)
+            {
+                printf("\n\nID SERIE:\n\n%d ", clientes[i].idSerie);
+                printf("\n\nNOMBRE:\n\n%s ", clientes[j].nombre);
+                break;
             }
 
         }
