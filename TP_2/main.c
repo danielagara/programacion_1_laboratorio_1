@@ -21,17 +21,14 @@ int main()
     char seguir='s';
     int opcion=0;
     eDatosPersonales personas[S];
-    int i, j, u, k;
+    int i, j, k;
     char respuesta;
     int contador=0;
     int contadorMenores=0, contadorEntre=0, contadorMayores=0;
-    int men, ent, may;
     int okI;
-    char okC;
-    char columnaMenores[20][3], columnaEntre[20][3], columnaMayores[20][3];
+    char graficoEdades[20][3];
     int auxDniBusqueda;
     char flagBusqueda='n';
-    int longMenores, longEntre, longMayores;
 
 
     for(i=0;i<S;i++)
@@ -158,36 +155,36 @@ int main()
                 mostrarPersona(personas, contador);
                 break;
             case 4:
-                printf("%d\t%d\t%d\n\n", contadorMenores, contadorEntre, contadorMayores);
-/*
-                for(men=0;men<contadorMenores;men++)
-                {
-                    columnaMenores[men]='*';
-                    printf("%c\n", columnaMenores[men]);
 
+                for(i =20-1;i>= 0; i--)
+                {
+                    if(contadorMenores > 0)
+                    {
+                        graficoEdades[i][0] = '*';
+                        contadorMenores--;
+                    }
+                    if(contadorEntre > 0)
+                    {
+                        graficoEdades[i][1] = '*';
+                        contadorEntre--;
+                    }
+                    if(contadorMayores > 0)
+                    {
+                        graficoEdades[i][2] = '*';
+                        contadorMayores--;
+                    }
                 }
 
-                for(ent=0;ent<contadorEntre;ent++)
+                printf("\n");
+                for(i=0;i<20; i++)
                 {
-                    columnaEntre[ent]='*';
-                    printf("\t%c\n", columnaEntre[ent]);
+                    if((graficoEdades[i][0]==' ') && (graficoEdades[i][1]==' ') && (graficoEdades[i][2]==' '))
+                    {
+                        continue;
+                    }
+                    printf("%c\t%c\t%c\n", graficoEdades[i][0], graficoEdades[i][1], graficoEdades[i][2]);
                 }
-                for(may=0;may<contadorMayores;may++)
-                {
-                    columnaMayores[may]='*';
-                    printf("\t\t%c\n", columnaMayores[may]);
-                }
-
-*/
-                //p columnaMenores[20][3]
-                for(i=0;i<20;i++)
-                {
-                    //HACER CON LO DE MATRIZZZZZ DEFINIDAS YA ARRIBA
-                }
-
-                //p columnaEntre[20][3]
-                //p columnaMayores[20][3]
-                printf("<18\t19-35\t>35\n");
+    printf("<18\t19-35\t>35\n\n");
 
                 break;
             case 5:
