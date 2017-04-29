@@ -48,8 +48,8 @@ void mostrarSeries(eSerie series[], int cant);
 void mostrarSerie(eSerie series[]);
 void mostrarClientesConSerie(eCliente clientes[], eSerie series[]);
 void mostrarSeriesConClientes(eCliente clientes[], eSerie series[], int cant, int segcant);
-void mostrarSerieLoser(eCliente x[], eSerie y[], int, int);
 void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int cant2);
+void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2);
 
 
 int main()
@@ -57,6 +57,7 @@ int main()
     int opcion, S=5, C=5;
     eSerie series[S];
     eCliente clientes[C];
+    int contadorSerieTBBT=0;
 
     cargarSeries(series);
     cargarClientes(clientes);
@@ -72,25 +73,29 @@ int main()
     switch(opcion)
     {
         case 1:
+        printf("MOSTRANDO CLIENTES \n\n");
         mostrarSeries(series, 5);
         mostrarClientes(clientes, 5);
         break;
 
         case 2:
+        printf("MOSTRANDO CLIENTES CON SU SERIE \n\n");
         mostrarClientesConSerie(clientes, series);
         break;
 
         case 3:
+        printf("MOSTRANDO SERIES CON SU CLIENTE \n\n");
         mostrarSeriesConClientes(clientes, series, 10, 5);
         break;
 
         case 4:
+        printf("MOSTRANDO CLIENTES QUE MIRAN TBBT \n\n");
         mostrarClientesTBBT(clientes, series, 10, 5);
         break;
 
-        /*case 5:
+        case 5:
         mostrarSerieLoser(clientes, series, C, S);
-        break;*/
+        break;
     }
 
 
@@ -209,19 +214,62 @@ void mostrarSeriesConClientes(eCliente clientes[], eSerie series[], int cant, in
 }
 
 void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int cant2)
-{
+{//da con error
+    int contadorSerieTBBT=0;
     int j, i;
+    for(j=0;j<10;j++)
+    {
+        if(clientes[j].idSerie==100)
+        {
+            contadorSerieTBBT++;
+        }
+    }
+
+
+        for(i=0;i<contadorSerieTBBT;i++)
+        {
+            for(j=0;j<10;j++)
+            {
+                if(clientes[i].idSerie==100)
+                {
+                    printf("\n\nID SERIE:\n\n%d ", clientes[i].idSerie);
+                    printf("\n\nNOMBRE:\n\n%s ", clientes[i].nombre);
+                    break;
+                }
+            }
+        }
+
+}
+
+void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2)
+{
+    int cont100=0, cont101=0, cont102=0, cont103=0, cont104=0;
+    int eLoser losers[5];
+    for(i=0;i<5;i++)
+    {
+        losers[i].idSerie=series[i].idSerie;
+
+    }
     for(i=0;i<5;i++)
     {
         for(j=0;j<10;j++)
         {
-            while(clientes[j].idSerie==100)
+            if(losers[i].idSerie==clientes[j].idSerie)
             {
-                printf("\n\nID SERIE:\n\n%d ", clientes[i].idSerie);
-                printf("\n\nNOMBRE:\n\n%s ", clientes[j].nombre);
-                break;
+                contador
             }
-
         }
     }
+    for(i=0;i<5;i++)
+    {
+        if(i==0)
+        {
+            min=losers[i].contadorLoser;
+        }
+        if(min>losers[i].contadorLoser)
+        {
+            min=losers[i].contadorLoser;
+        }
+    }
+    //FALTA TERMINAR Y HACER CON ESTRUCTURA QUE UNA ECLIENTESERIE
 }
