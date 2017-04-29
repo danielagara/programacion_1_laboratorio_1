@@ -1,0 +1,177 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define C 10
+#define S 5
+
+/*
+2- mostrar cada uno
+3- mostrar clientes con su serie
+4- por cada serie los clientes que la estan viendo
+5- todos los clientes que ven TBBT (100)
+6- La serie menos popular
+
+Crear una cuarta estructura que permita relacionar un cliente con una serie, de esta manera podremos obtener una relacion
+muchos a muchos (Un cliente que ve muchas series)
+
+7- Todas las series que ven los clientes de nombre "Juan"
+*/
+
+typedef struct
+{
+    int idSerie;
+    char titulo[20];
+    int temporadas;
+    char genero[20];
+    int estado;
+} eSerie;
+
+typedef struct
+{
+    int idCliente;
+    char nombre[30];
+    int estado;
+
+} eCliente;
+
+typedef struct
+{
+    int idSerie;
+    int cont;
+} eLoser;
+
+typedef struct
+{
+    int idCliente;
+    int idSerie;
+} eClientes_Series;
+
+
+int main()
+{
+    eCliente clientes[10];
+	eSerie series[5];
+	eClientes_Series CS[10];
+	cargarSeries(series);
+	cargarCliente_Serie(CS);
+	cargarClientes(clientes);
+
+	mostrarSeries(series, 5);
+
+
+	mostrarClienteconSeries(clientes, 10, series, 5, CS, 10);
+
+	return 0;
+}
+
+void cargarSeries(eSerie[]);
+void cargarClientes(eCliente[]);
+void cargarCliente_Serie(eClientes_Series[]);
+void mostrarClienteconSeries(eCliente[], int, eSerie[], int, eClientes_Series[], int);
+void mostrarSeries(eSerie[],int);
+
+
+
+
+void cargarSeries(eSerie series[])
+{
+    int idSerie[5]= {100,101,102,103,104};
+    int estado[5]= {1,1,1,1,1};
+    char titulo[5][30]= {"Serie A","Serie B","Serie C","Serie D","Serie F"};
+    int temporadas[5]= {9,7,7,6,1};
+    char genero[5][30]= {"Comedia","Policial","SciFi","Terror","Comedia"};
+
+    int i;
+    for(i=0; i<5; i++)
+    {
+        series[i].idSerie = idSerie[i];
+        strcpy(series[i].titulo, titulo[i]);
+        series[i].estado = estado[i];
+        series[i].temporadas = temporadas[i];
+        strcpy(series[i].genero, genero[i]);
+    }
+
+}
+
+void mostrarSeries(eSerie series[], int cant)
+{
+	int i=0;
+
+		printf("***Listado de Series***\n\n");
+		printf(" Id           Titulo   Temporadas    Genero\n");
+		printf("--------------------------------------------\n");
+
+	for(i=0; i<cant; i++)
+	{
+
+		if(series[i].estado == 1)
+		{
+			printf(" %3d  %15s    %d    %15s \n", series[i].idSerie, series[i].titulo, series[i].temporadas, series[i].genero);
+		}
+
+		printf("\n\n");
+	}
+}
+
+void cargarClientes(eCliente clientes[])
+{
+    int id[10] = {1,2,3,4,5,6,7,8,9,10};
+    char nombres[10][30]={"juan","maria","pedro","luis","romina","jose","andrea","patricia","luciano","camila"};
+    int estado[10]={1,1,1,1,1,1,1,1,1,1};
+    int i;
+
+    for(i=0; i<10;i++)
+    {
+        clientes[i].idCliente = id[i];
+        strcpy(clientes[i].nombre, nombres[i]);
+        clientes[i].estado = estado[i];
+
+    }
+
+}
+
+
+void cargarCliente_Serie(eClientes_Series x[])
+{
+    int i;
+    eClientes_Series H[]= {{3, 100}, {1,100}, {1, 102}, {2, 101}, {1, 103}, {7,100}, {4, 103}, {4, 104}, {3, 101}, {4, 102}};
+    for(i=0; i< 10; i++)
+    {
+        x[i] = H[i];
+    }
+}
+
+void mostrarClienteconSeries(eCliente c[],int tamC, eSerie s[],int tamS, eClientes_Series cs[],int tamCS)
+{
+    int i,j,k;
+    int idClient;
+    int idSerie;
+
+    for(i=0; i < tamC; i++)
+    {
+        if(c[i].estado !=0)
+        {
+            printf("Nombre Cliente: %s\n", c[i].nombre);
+            idClient = c[i].idCliente;
+
+            for(j= 0; j< tamCS; j++)
+            {
+                if(idClient == cs[j].idCliente)
+                {
+                    idSerie = cs[j].idSerie;
+
+                    for(k=0; k < tamS; k++)
+                    {
+                        if(idSerie == s[k].idSerie)
+                        {
+                            printf("%s\n", s[k].titulo);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
