@@ -1,0 +1,323 @@
+SPD Estructura de las computadoras:
+
+Historia de las computadoras:
+La prehistoria: utilizaban los dedos de las manos y los huesos para la contabilización de objetos de usos
+cotidianos (animales, utensilios, personas, etc.).
+
+3000 a.C. – Abaco: primer maquina digital, 1° elemento automático de cálculo creado por el hombre.
+Constituido por bolitas ensartadas en un cordón que a su vez se fija en un soporte de madera. Manejaba
+el sistema de unidad, decena y centena.
+
+1614 – Aparece el Logaritmo: tabla de logaritmos. Creado por un escocés llamado Neper. Para
+multiplicar se suman los logaritmos de los n° que se han de multiplicar, para dividir se restan, y para
+calcular potencias se multiplican.
+
+1650 – Regla de Cálculo: se utilizan escalas que se gradúan de acuerdo a los logaritmos de las
+cantidades que se calculan. Se realiza en pocos pasos.
+
+1650 – Pascal: era un francés y crea la Pascalina, primer calculadora mecánica que utilizaba una serie de
+ruedas (engranajes) de 10 dientes en las que cada uno de los dientes representaba un dígito del 0 al 9.
+Manejaba la adición y sustracción. No puede guardar el resultado.
+
+1671 – Leibnitz: era un alemán y perfecciono los principios de Pascal para realizar la multiplicación y
+división mediante la adición y sustracción repetidas.
+
+1800 – Jacquard: Otro francés que creó las Tarjetas Perforadas, usa tarjetas perforadas para manejar
+agujas de tejer en telares mecánicos. Un conjunto de tarjetas constituían un programa.
+
+1820/1835 - Babbage: Un inglés, al que apodaban “el loco Babbage”, crea la Maquina de Diferencias
+(Maq. Analítica), máquina diferencial para el cálculo de polinomios; de programa exterior, que no forma
+parte de la máquina. El operador debía darle los datos y la operación a realizar y la máquina trabajaba
+automáticamente, sin requerir su intervención constante. Teóricamente funcionaba, no se concretó por
+la época, por la falta de tecnología.
+Esta máquina poseía características de un ordenador moderno:
+-Dispositivos de entrada para cargar los datos por medio de tarjetas perforadas
+-Memoria para almacenar los datos introducidos, las instrucciones y los resultados de las
+operaciones.
+-Unidad de control y unidad aritmético-lógica.
+Dispositivos de salida para enviar al exterior los resultados.
+
+Ada Augusta Byron King (1815-1852) trabajó junto a Babbage y fue la primera persona en describir un
+lenguaje de programación de carácter general. Se la reconoce como la madre de la programación
+informática.
+
+1847/1854 – George Boole: (Inglés) desarrolla el Algebra Booleana y aporta significativamente a la
+representación de circuitos lógicos.
+
+1890 – Hollerith: (censista de EEUU): 1° tarjeta perforada para almacenar datos. Máquina para censos,
+utiliza tarjetas perforadas codificadas.
+
+1907- Lee De Forest: inventa la válvula electrónica tríodo de vacío.
+
+1912 -1954 - Alan Turing: creó en 1936 una máquina que trabajaba con código binario. Por eso algunos
+lo consideran el inventor de las computadoras digitales. Influyó en la formalización de los conceptos
+“algoritmo” y “computación”
+
+1939/1944 – Howard Aitken: Otro estadounidense desarrolla la MARK I, modifican la máquina analítica
+y crean el primer computador electromecánico (con los principios de Babbage).
+
+1945 – Mauchly y Eckert: Dos estadounidenses desarrollan en la Universidad de Pennsylvania la ENIAC (Electronic Numeric
+Integrator and Calculator), 1° máquina de cálculo totalmente electrónica (pesaba 30 toneladas).
+
+1945 – John Von Neumann: un Húngaro desarrolla sus principios
+para una computadora. Fig. 2. Tubo de vacío, componente que
+hizo funcionar las computadoras en la
+primera generación.
+
+1947 – Primer computadora con los principios de JVN: EDVAC (Electronic Discrete Variable Automatic
+Computer, desarrollada por Mauchly, Eckert y Von Neumann).
+
+
+-Primera generación de computadoras:
+La primera generación se encuentra marcada por el uso de los tubos o
+valvulas de vacio: unidad basica para el funcionamiento de los equipos.
+Los tubos de vacio se caracterizaban por generar grandes cantidades de 
+energia termica, por lo que su vida util era demasiado corta, demandaban
+demasiados cuidados y ocupaban grandes volumenes de espacio.
+Hasta el momento todo los equipos recibian las instrucciones directamente
+por el usuario, pero en 1945 Von Neumann introduce la idea de computadoras
+que funcionaran con instrucciones almacenadas en memoria. Este concepto,
+llevo al desarrrollo de la ENIAC, considerada la primera computadora,
+cuya iniciativa surge de las fuerzas armadas de EEUU, y funcionaba con 
+programas almacenados de manera cableada y sistma numerico decimal para
+representar la informacion.
+Luego aparece la EDVAC, cuyo cambio es utilizar el sistema de numeracion binario,
+permitiendo almacenar los programas en memorias primitivas en vez de cableadas.
+-Segunda generacion de computadoras:
+La segunda generacion comienza en el año 1953: marcada por la considerable
+reduccion del tamaño de las computadoras, que fue posible gracias a la 
+invencion del transistor. Este pequeño componente electronico surge en 
+1948, como reemplazo a las valvulas de vacio, siendo mas pequeño y 
+generando menos consumo energetico (menos calor). Era mas confiable, 
+tenia una vida util mas larga y el procesamiento era mucho mas rapido.
+Esta generacion concluye en 1962, y durante sus nueve años, la fabricacion 
+de los transistores fue evolucionando para que sean mas pequeños y eficientes.
+Durante el mismo tiempo, surgen los lenguajes de programación de alto nivel,
+como: FORTRAN, COBOL, ALGOL, etc.
+-Tercera generacion de computadoras:
+La tercera generacion abarca desde 1963 hasta 1971. Al haberse desarrollado
+tales modificaciones con los transistores, se podian ubicar varios en un 
+mismo espacio, dando lugar a un nuevo componente: el circuito integrado, 
+pieza funcamental de esta generacion. En el mismo se integraban gran cantidad
+de componentes electronicos, lo que hizo posible la fabricacion de computadora
+mucho mas pequeñas, lo que dio lugar a las primeras computadoras personales.
+Desde un punto de vista de software, esta generacion marca el nacimiento de 
+los primeros sistemas operativos.
+-Cuarta generacion de computadoras:
+La cuarta generacion viene de la mano del crecimeinto de componentes 
+que estaban incluidos en un circuito integrado (escala de integracion).
+Durante esta, surgen nuevos conceptos: LSI (large scal integration, 500 a
+20000 transistores en el mismo circuito), VLSI (very large scale integration
+20000 a 1000000 de transistores), dando luz al componente que hoy en dia
+es fundamental: el microprocesador.
+La gran escala de integracion, el avance en la fabricacion, y el nacimiento 
+de los primeros sistemas operativos, dieron lugar a las primeras computadoras
+personales, como por ej equipos marca apple, y en cuanto a sistemas operativos,
+DOS, etc.
+Luego de esta generacion, resulta dificil identificar el inicio y final de otras
+generaciones, debido al vertiginoso crecimiento de las tecnologias, ademas de 
+que todos los equipos fabricados posteriormente, fueron con base a los principios
+de las anteriores generaciones, y no surgio otro cambio radical en la manera de 
+fabricar o utilizar computadoras.
+
+
+-Componentes fundamentales del hardware de una computadora:
+El hardware es la parte fisica de la computacion. Son los medios fisicos
+que permiten el proceso de datos, corforme lo ordenan las instrucciones de
+cierto programa previamente memorizado en un computador. Aquellos componentes
+que resultan imprescindibles para una computadora:
+
+1-UNIDAD CENTRAL DE PROCESAMIENTO (UC, UAL, registros): Generalmente en las
+computadoras actuales, la UCP o CPU se encuentra dentro de un microprocesador.
+Cuyas funciones son, controlar y supervisar el funcionamiento del sistema 
+en base a un programa almacenado en la memoria principal; llevar a cabo 
+la ejecucion de las instrucciones que se le dan realizando las operaciones 
+necesarias; y controlar el envio y recepcion de datos desde las unidades 
+perifericas a la memoria.
+Esta misma esta compuesta por:
+-UC: La unidad de control es la que de alguna manera dirige el funcionamiento
+del equipo. Esta a cargo de el secuenciamiento de las acciones que los demas
+circuitos deben realizar y su orden de ejecucion. Sus funciones son:
+obetener de memoria la proxima instruccion a ejecutar, analizar la instruccion, 
+establecer conexiones electricas, localizar en la memoria los datos a 
+operar, ordenarle al circuito de la unidad aritmetico logica que realice con 
+dichos datos la operacion indicada, y guardar el resultado en un registro 
+acumulador o en la memoria principal.
+La UC junto con el sistema operativo permiten el verdadero control y direccion de 
+todas las acciones que se producen dentro de la computadora. Cuenta con 
+un reloj electronico que determina la velocidad de procesamiento, marcando 
+intervalos regulares.
+-UAL: La unidad aritmético-lógica realiza operaciones que le ordenla la UC, 
+auxiliadas por registros acumuladores que guardan temporalmente datos y resultados.
+Las instrucciones a realizar las envia mediante señales la unidad de control,
+aunque las ejecuta de manera autonoma; recoge los operandos de los registros
+convenientes (son circuitos encontrados en la ucp y pueden almacenar temporalmente
+informacion relacionada con las ejecuciones), proporcionando los resultados. No 
+emite ordenes ni ejecuta instrucciones.
+
+2-MEMORIA PRINCIPAL: A la memoria principal o no volatil, se la conoce tambien 
+como memoria RAM, por el tipo de tecnologia con el que trabaja. Almacena instrucciones
+de programas que seran ejecutadas en la ucp y los datos que ellas ordenan
+procesar asi como resultados intermedios y finales de operaciones.
+El programa que se quiera ejecuta y los datos a ser procesados deben 
+tendran que estar almacenados en la memoria principal. Almacena bits en celdas
+independientes (cada celda 1 byte, 8 bits) y cada una tiene su direccion de memoria
+en numeros binarios, indicando su posicion.
+La memoria principal esta compuesta por:
+Memoria ram: memoria de acceso al azar, se accede a cualquier celda de la memoria
+de manera directa, su almacenamiento es temporario, memoria de lectura
+y escritura, es volatil porque pierde la info almacenada cuando se corta
+el suministro de energia.
+Memoria rom: memoria de solo lectura, los datos se almacenan permanentemente, no es
+modificable, y no es volatil, pero su acceso tambien es random. En la misma
+se almacenan programas indispensables para el funcionamiento de la computadora, y
+se activa al encender la misma.
+
+3-BUSES: El sistema de interconexion de los bloques de la computadora
+se realiza mediante los buses, que son caminos formados por conjuntos de
+cables o lineas conductorias que permiten la comunicacion elerctrica entre
+esas partes (flujo de datos), osea, mediante los cuales se propagan 
+señales electricas que se interpretan como 1 y 0 logicos.
+
+4-UNIDADES O MODULOS DE ENTRADA/SALIDA (canales): Dispositivos encargados
+de establecer enlaces de comunicacion entre la cpu y los perifericos. Cada
+modulo de e/s se conecta al bus del sistema o a un conmutador central y 
+controla a uno o mas perifericos. Ademas, tienen la logica necesaria para 
+permitir la conexion entre buses y perifericos. Estas unidades determinan la 
+disponibilidad de los perifericos, controlan los formatos de e/s de los 
+datos, comprueban errores de lectura y/o grabacion, y recuperan errores
+de transmision. Los canales suelen especializarse segun perifericos y 
+clasificarse por forma de trabajar.
+Las tarjetas de interfaz o expansion cumplen la funcion de traducir y 
+transmitir mediante los buses la informacion para que pueda ser interpretada
+por los perifericos como por la cpu. Estas tarjetas estan formadas por:
+un procesador para la traduccion y transmision o recepcion de datos, memoria rom
+para almacenar el uego de instrucciones correspondientes a la tarjeta, buses 
+internos para comunicarse entre sus componentes, y e tiepo de puerdo que 
+permita la conexion mediante los buses externos al periferico relacionado. Algunos
+tambien tienen una memoria ram propia.
+
+5-PERIFERICOS: Aquellos dispositivos de entrar datos desde el exterior al 
+computador, y dar resultados del computador al exterior. Cada uno de 
+estos tiene una funcion especifica, y se conectan a traves de puertos
+caracteristicos de las computadoas o mediante las tarjetas de expansion. 
+Ampliamente, los perifericos se pueden clasificar en: interaccion con los 
+humanos (permiten comunicacion con el usuario), interaccion con maquinas
+(comunicacion con elementos del equipo) y de comunicacion (comunicacion con 
+dispositivos remotos).
+Otra clasificacion puede ser en: entrada ya que los perifericos permiten la 
+entrada desde el exterior hacia la memoria principal, de salida desde la
+memoria principal al exterior, y de entrada y salida que posibilitan 
+el flujo de datos en ambos sentidos.
+
+
+Arquitectura de computadoras:
+El concepto de arquitectura se refiere a la integracion de la estructura
+fisica de la computadora con su estructura logica. A partir de este 
+se comienzan a formular distintas maneras de optimizarlo para que 
+las computadoras sean mas eficientes y por lo tanto mas a corde a a las 
+necesidades de los distintos tipos de usuarios. 
+Dicha arquitectura abarca las siguientes fases:
+-definicion de las necesidades a cubrir
+-planificacion general de la computadora
+-diseño de la misma y sus componentes
+-analisis del sistema obtenido
+-especificacion del sistema: caracteristicas del mismo, de sus componentes
+y de las instrucciones ejecutables.
+Las principales problematicas de la arquitectura de computadoras fueron:
+-La independencia entre el hardwar y el software, y la falta de definicion
+de funciones de cada uno de ellos.
+-El seguimiento a ultranza de la arquitectura de Von Neumann, no diseñada
+para soportar los nuevos sistemas operativos, lenguajes y aplicaciones.
+Hoy en dia estas problematicas fueron superadas, dando lugar a unas nuevas:
+-el factor tiempo: en el diseño del equipo fisico interviene como factor de 
+alta importancia el tiempo. La ley de Moore asegura que el numero de transistores
+que se incorporan a un circuito integrado se multiplica por 4 cada años y medio (
+la miniaturizacion es la constante evolucion de los dispositivos electronicos).
+-el alcance de limites dificilmente superables de la tecnologia hardware:
+la busqueda de mayor rendimiento se basara en nuevas arquitecturas que 
+exploten a pleno las posibilidades del hardware.
+
+TIPOS DE ARQUITECTURAS:
+
+-Arquitectura clasica de computadoras o Von Neumann: En 1947, Neumann 
+ideo una solucion para evitar recablear la ENIAC: consistia en introducir
+las operaciones por medio de tarjetas perforadas, por lo que un programa
+se podia mantener latente en memoria para su uso.
+Dicha arquitectura consta entonces de una CPU conectada a UNA UNICA MEMORIA
+donde se guardarian programas y datos, a la cual se accede a traves de 
+un SISTEMA DE BUSES UNICO; ademas posee un MODULO DE E/S para permitir
+la comunicacion con los PERIFERICOS externos que maneja el usuario.
+Datos y progrmas en misma memoria lectura-escritura direccionados indicando 
+posicion sin importar su tipo, ejecucion en secuencia (salvo que se indique 
+lo contrario), representacion binaria, un sistema de interconexion
+conecta la memoria y la unidad de control.
+Problemas o debilidades de esta arquitectura: 
+-limitacion de la velocidad de operacion por bus unico para datos e instrucciones:
+esto impide que se superpongan procesos de lectura y ejecucion. Esto hace
+que el microprocesador sea mas lento en su respuesta, ya que mientras no 
+finalicen las transferencias de datos de la instruccion anterior.
+-la longitud de las instrucciones esta limitada por la longitud de los 
+datos: tambien al compartir el bus, para buscar instrucciones complejas
+el microprocesador suele hacer varios accesos a memoria, por lo tanto 
+si debe manejar una instruccion mas larga que la que tiene su bus y 
+microprocesador, debera hacer mas de un acceso.
+Los pasos que realiza o emula son:
+1-Obtiene la siguiente instruccion desde la memoria en la direccion indicada
+por el contador de programa y la guarda en el registro de instruccion.
+2-Aumenta el contador del programa para apuntar a la siguiente instruccion.
+3-Decodifica la instruccion mediante la unidad de control (coordina 
+el resto de componentes para realizar una funcion determinada).
+4-Se ejecuta la instruccion. Puede llegar a cambiar el valor del contador, 
+permitiendo operaciones repetitivas.
+5-Vuelve al paso 1.
+
+Arquitectura moderna o Harvard: esta nace para atacar las debilidades de la de 
+Von Neumann y consiste en construir un procesador unido a dos tipos de memoria
+diferentes, una para datos y la otra para instrucciones, por medio de buses 
+independientes. La existencia de estos permite que la cpu pueda acceder
+de forma independiente y simultanea a datos y a instrucciones, que permite
+que la longitud de datos e instrucciones pueda ser diferente, optimizando
+en general la performance.
+Ventajas de esta arquitectura:
+-El tamaño de las instrucciones no esta elacionado con el de los datos: 
+por lo que puede ser optimizado oara que cualquier instruccion ocupe una 
+sola posicion en memoria de programaa, logrando mas velocidad y menor
+longitud de programa.
+-La superposicion del acceso a datos e instrucciones logra mayos velocidad
+en las operaciones.
+La incorporacion de memorias cache tambien potencia el aislamiento de 
+instrucciones y los datos.
+
+Arquitectura cisc: computador con conjunto de instrucciones complejas, usada
+en muchas computadoras personales. Los microprocesadores cisc tienen 
+un conjunto de instrucciones que se caracteriza por ser muy amplio y permitir
+operaciones complejas situados en memoria o registros internos. 
+Esta arquitectura dificulta el paralelismo entre instrucciones, por lo que 
+la mayoria de los sistemas cisc de alto rendimiento implementan un sistema
+que convierte dichas instrucciones complejas en varias microinstrucciones.
+Para realizar una sola instruccion un chip cisc requiere de 4 a diez ciclos
+de reloj.
+Las ventajas de esta son: reduce la dificultad de crear compiladores, permite 
+reduccion del costo total del sistema, reduce los costos de creacion de software, 
+mejora la compactacion de codigo, facilita la depuracion de errores.
+
+Arquitectura risc: computador con conjunto de instrucciones reducidas, 
+diseño generalmente utilizado en microprocesadores o microcontroladores,
+con las caracteristicas fundamentales:
+1-Instrucciones de tamaño fijo y presentadas en un reducido numero de formatos.
+2-Solo las instrucciones de carga y almacenamiento acceden a la memoria de datos.
+El objetivo de diseñar maquinas con esta arquitectura es posibilitar 
+la segmentacion y el paralelismo en la ejecucion de instrucciones y reducir
+los accesos a memoria. Las maquinas risc son de tendencia actual de construccion
+de microprocesadores.
+Para un procesador risc, el set de instrucciones y el bus de memoria de programa
+pueden diseñarse de tal manera que todas las instrucciones tengan una sola 
+posicion de memoria de programa de longitud. 
+Entre las ventajas de esta arquitectura tenemos: cada instruccion puede ser
+ejecutada un un solo ciblo del cpu, la cpu trabaja mas rapido al utilizar 
+menos ciclos de reloj, utiliza un sistema de direcciones no destructivas en 
+ram es decir, que conserva los datos resultados y operandos en memoria , 
+reduciendo la ejecucion de nuevas operaciones.
+*el tipo de procesador mas comunmente usado en equipos de escritorio esta
+basado en cisc*
