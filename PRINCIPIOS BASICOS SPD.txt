@@ -1,0 +1,84 @@
+APUNTES SPD:
+
+-Tension y corriente:
+
+Tension:
+El potencial electrico se puede decir que es el trabajo de que debe realizar 
+una fuerza externa para mover una carga desde un punto referente a otro.
+En el contexto de un circuito electrico, el potencial electrico de un punto
+refleja la energia que tienen las cargas electrcas (electrones) cuando pasan
+por el punto en cuestion. Cualdo la unidad de carga va recorriendo el circuito,
+pierde energia mientras pasa por los distintos componentes. Dicha perdida tendra
+diferentes manifestaciones a traves de trabajos (como la ilumnniacion en una
+lampara, o el movimiento en un motor). Para recuperar la energia debera pasar
+nuevamente por un generador de tension.
+Esta idea da a entender que las cargas dentro de un circuito electrico nunca se 
+gastan, si no que se mueven dentro de este, descargandose y pasando luego por 
+la fuente de alimentacion para "energizarse".
+Asi, una carga que sale del borne positivo de una fuente, lleva consgo determinada
+energia que ira transformandose hasta que llega descargada al borne negativo de
+la misma, onde se energizara y el ciclo comenzara nuevamente.
+La unidad de medida de la diferencia potencial es el volt.
+
+Corriente electrica:
+La cantidad de carga elecrica que circula en cualquier parte del circuito que 
+estemos analizando la definimos como intensidad de la corriente electrica o
+simplemente corriente.
+La misma se mide en Ampere. Si decimos que las cargas electricas son electrones
+esto significa que en 1 ampere hay aproximadamente seis coma 24 trillones 
+electrones atravesando por segundo cada parte del circuito electrico.
+
+-Energia y Potencia electrica:
+
+Energia elecrica:
+Se denomina energia electrica a la ergia resultante de la dierencia de potencial
+entre 2 puntos, lo que permite establecer una corriente electrica entre ambos
+cuando se los pone en contacto por medio de un conductor electrico.
+La energia no puede definirse como toda magnitud basica de la fisica. Se usa su 
+concepto y en el caso de la energia electrica es aquello que gastan los dispositivos
+electricos y electronicos para cumplir su funcion.
+La energia electrica puede transformarse en muchas otras formas de energia, y es eso
+que cargan las cargas electricas dentro de una fuente de alimentacion para 
+luego descargar en las diferentes partes de un circuito para funcionar.
+
+Potencia electrica:
+Se utiliza para calcular la energia independientemente del factor tiempo, la 
+potencia electrica ess la cantidad de energia consumida o entregada por unidad
+de tiempo.
+La unidad de medida es watt y 1w es igual a un joule de energia por segundo.
+En cualquier componente de un circuito, la potencia electrica, es igual a 
+la tension entre sus bornes, multiplicada por la coriente que lo circula
+es decir P=VxI (ley de watt).
+
+-Ley de Ohm:
+La ley de Ohm postulada por Georg Simon Ohm permite establecer la relacion
+corriente, tension y resistencia.
+La ley expone: El flujo de corriente que circula por u circuito cerrado es 
+directamente proporcional a la tension aplicada e inversamente proporcional
+a la resistencia de la carga conectada.
+Llevado a formulas: I=V/R o V=IxR o R=V/I
+I= corriente que circula por el circuito (ampere)
+R= resistencia a la circulacion de electrones (ohm)
+V=tension dierencia de potencial (volt)
+
+Sirve para conociendo 2 de las variables, determinar la tercera, es decir
+conociendo la resistencia y la tension, determinar la corriente, por ej.
+
+-Leyes de Kirchoff:
+
+Las leyes de Kirchoff fueron enunciadas por Gustav Kirchoff, y rigen el 
+comportamiento de cualquier circuito electrico o electronico.
+
+Primero necesitamos definir lo que es un nodo: e un punto donde dos o mas 
+componentes tienen una conexion comun.
+PRIMERA LEY O LEY DE NODOS: En cualquier nodo, la suma de las
+corientes que entran es igual a la suma de las corrientes que salen.
+En otras palabras, los electrones no se pierden ni se gastan ni nacen en 
+ninguna parte del circuito, ya que cualquier parte del mismo puede considerarse
+la union de dos o mas componentes, osea un nodo.
+
+Necesitamos definir lo que es una malla: en un circuito elecrico todo camino
+cerrado que surge comenzando en un punto cualquiera del circuito y al recorrerlo 
+volver nuevamente al inicio sin pasar 2 veces por el mismo punto.
+SEGUNDA LEY O LEY DE MALLAS: La suma de todas las tensiones en una malla es igual
+a cero
