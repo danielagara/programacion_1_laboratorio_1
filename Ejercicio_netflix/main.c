@@ -35,7 +35,7 @@ typedef struct
 
 typedef struct
 {
-    int idSerie;
+    int idSerie[5];
     int cont;
 } eLoser;
 
@@ -50,6 +50,7 @@ void mostrarClientesConSerie(eCliente clientes[], eSerie series[]);
 void mostrarSeriesConClientes(eCliente clientes[], eSerie series[], int cant, int segcant);
 void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int cant2);
 void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2);
+
 
 
 int main()
@@ -94,7 +95,7 @@ int main()
         break;
 
         case 5:
-        mostrarSerieLoser(clientes, series, C, S);
+        mostrarSerieLoser(clientes, series, 10, 5);
         break;
     }
 
@@ -222,7 +223,7 @@ void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int can
         if(clientes[j].idSerie==100)
         {
             contadorSerieTBBT++;
-        }
+        }series[i].idSerie;
     }
 
 
@@ -243,33 +244,35 @@ void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int can
 
 void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2)
 {
-    int cont100=0, cont101=0, cont102=0, cont103=0, cont104=0;
-    int eLoser losers[5];
+    eLoser losers[5];
+    int i, j, min;
+    int aux[5];
+
     for(i=0;i<5;i++)
     {
         losers[i].idSerie=series[i].idSerie;
 
+        printf("\n%d", losers[i].idSerie);
     }
-    for(i=0;i<5;i++)
-    {
-        for(j=0;j<10;j++)
+
+    /*for(j=0;j<10;j++)
         {
-            if(losers[i].idSerie==clientes[j].idSerie)
+
+            if(clientes[j].idSerie==losers[i].idSerie)
             {
-                contador
+               losers[i].cont++;
             }
         }
-    }
-    for(i=0;i<5;i++)
+    if(i==0)
     {
-        if(i==0)
-        {
-            min=losers[i].contadorLoser;
-        }
-        if(min>losers[i].contadorLoser)
-        {
-            min=losers[i].contadorLoser;
-        }
+        min=losers[i].cont;
     }
-    //FALTA TERMINAR Y HACER CON ESTRUCTURA QUE UNA ECLIENTESERIE
+    else if(min<losers[i].cont)
+    {
+        min=losers[i].cont;
+        printf("%d\n%d", min, losers[j].idSerie);
+    }
+        printf("\n%d", losers[i].cont);
+
+    //FALTA TERMINAR Y HACER CON ESTRUCTURA QUE UNA ECLIENTESERIE*/
 }
