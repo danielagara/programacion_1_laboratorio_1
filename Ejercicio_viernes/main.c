@@ -57,8 +57,8 @@ int main()
     int opcion, i;
 
     printf("1-Cuantos paseos hizo Bobby?\n"); //listo
-    printf("2-Cual es el paseador que mas pasea?\n");
-    printf("3-Paseadores que pasearon dobermann.\n");
+    printf("2-Cual es el paseador que mas pasea?\n");//falta parte
+    printf("3-Paseadores que pasearon dobermann.\n");//falta parte
     printf("4-Perros con sus razas.\n");
     printf("5-Mostrar perros por raza.\n");
     printf("6-Cuanto cobra cada paseador.\n");
