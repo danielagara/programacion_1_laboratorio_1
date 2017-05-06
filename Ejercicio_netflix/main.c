@@ -244,18 +244,34 @@ void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int can
 
 void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2)
 {
-    eLoser losers[5];
+    eLoser losers[10];
     int i, j, min;
     int aux[5];
 
     for(i=0;i<5;i++)
     {
-        losers[i].idSerie=series[i].idSerie;
-
-        printf("\n%d", losers[i].idSerie);
+        //todavia sin terminar
     }
 
-    /*for(j=0;j<10;j++)
+}
+
+/*for(i=0;i<cantSeries;i++)
+{
+    if(loser[i].cont==min)
+    {
+        for(j=0;j<tamSeries;j++)
+        {
+            if(series[j].idSerie==loser[i].idSerie)
+            {
+                printf("%s", series[i].titulo);
+                break;
+            }
+        }
+    }
+}*/
+
+
+/*for(j=0;j<10;j++)
         {
 
             if(clientes[j].idSerie==losers[i].idSerie)
@@ -275,4 +291,5 @@ void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2
         printf("\n%d", losers[i].cont);
 
     //FALTA TERMINAR Y HACER CON ESTRUCTURA QUE UNA ECLIENTESERIE*/
-}
+
+    //menor, 2do barrido: cuales cumplen con ese menor
