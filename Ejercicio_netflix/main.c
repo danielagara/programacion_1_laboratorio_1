@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "strings.h"
+#define S 5
+#define C 10
 
 
 /*
@@ -35,9 +38,15 @@ typedef struct
 
 typedef struct
 {
-    int idSerie[5];
+    int idSerie;
     int cont;
 } eLoser;
+
+typedef struct
+{
+    int idSerie;
+    int idCliente;
+}eClienteSerie;
 
 void cargarSeries(eSerie[]);
 void cargarClientes(eCliente[]);
@@ -49,25 +58,42 @@ void mostrarSerie(eSerie series[]);
 void mostrarClientesConSerie(eCliente clientes[], eSerie series[]);
 void mostrarSeriesConClientes(eCliente clientes[], eSerie series[], int cant, int segcant);
 void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int cant2);
-void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2);
-
+void mostrarSerieLoser(eLoser losers[], eCliente clientes[], eSerie series[], int cant, int cant2);
+void mostrarSeriesJuan(eCliente [], eSerie [], eClienteSerie [], int, int, int);
 
 
 int main()
 {
-    int opcion, S=5, C=5;
+    int opcion;
     eSerie series[S];
     eCliente clientes[C];
+    eLoser losers[S];
     int contadorSerieTBBT=0;
-
+    int i, j;
     cargarSeries(series);
     cargarClientes(clientes);
+
+    eClienteSerie clienteSerie[C];
+
+    for(i=0;i<5;i++)
+    {
+        losers[i].idSerie=series[i].idSerie;
+        losers[i].cont=0;
+    }
+
+    for(j=0;j<10;j++)
+    {
+        clienteSerie[j].idCliente=clientes[j].idCliente;
+        clienteSerie[j].idSerie=clientes[j].idSerie;
+    }
 
     printf("1- mostrar cada uno\n");
     printf("2- mostrar clientes con su serie\n");
     printf("3- por cada serie los clientes que la estan viendo\n");
     printf("4- todos los clientes que ven TBBT (100)\n");
     printf("5- La serie menos popular\n");
+    printf("6- Las series que ve Juan\n");
+
     fflush(stdin);
     scanf("%d", &opcion);
 
@@ -95,7 +121,16 @@ int main()
         break;
 
         case 5:
-        mostrarSerieLoser(clientes, series, 10, 5);
+        printf("MOSTRANDO SERIE CON MENOS CLIENTES \n\n");
+        mostrarSerieLoser(losers, clientes, series, C, S);
+
+        case 6:
+        printf("MOSTRANDO TODAS LAS SERIES QUE VE JUAN \n\n");
+        for(i=0;i<10;i++)
+        {
+            printf("\n%d\n%d", clienteSerie[i].idCliente, clienteSerie[i].idSerie);
+        }
+
         break;
     }
 
@@ -223,7 +258,7 @@ void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int can
         if(clientes[j].idSerie==100)
         {
             contadorSerieTBBT++;
-        }series[i].idSerie;
+        }
     }
 
 
@@ -242,54 +277,70 @@ void mostrarClientesTBBT(eCliente clientes[], eSerie series[], int cant, int can
 
 }
 
-void mostrarSerieLoser(eCliente clientes[], eSerie series[], int cant, int cant2)
+void mostrarSerieLoser(eLoser losers[], eCliente clientes[], eSerie series[], int cant, int cant2)
 {
-    eLoser losers[10];
-    int i, j, min;
-    int aux[5];
+    int i, j, k, min;
 
     for(i=0;i<5;i++)
     {
-        //todavia sin terminar
+        for(j=0;j<10;j++)
+        {
+            if(losers[i].idSerie==clientes[j].idSerie)
+            {
+                losers[i].cont++;
+            }
+        }
     }
 
+    for(i=0; i<5;i++)
+    {
+         if(i==0)
+        {
+            min=losers[i].cont;
+        }
+        else
+        {
+            if(losers[i].cont<min)
+            {
+                min=losers[i].cont;
+            }
+
+        }
+    }
+
+    for(i=0; i<5; i++)
+    {
+        if(losers[i].cont==min)
+        {
+            for(k=0;k<5;k++)
+            {
+                if(series[k].idSerie==losers[i].idSerie)
+                {
+                    printf("%s\n", series[i].titulo);
+
+                }
+            }
+        }
+    }
+
+
+
+
+//MUESTRA TODOS LOS MENORES
 }
 
-/*for(i=0;i<cantSeries;i++)
+void mostrarSeriesJuan(eCliente clientes[], eSerie series[], eClienteSerie clienteSerie, int, int, int)
 {
-    if(loser[i].cont==min)
+    int i, j, k;
+
+    for(i=0;i<10;i++)
     {
-        for(j=0;j<tamSeries;j++)
+        if(clientes[i].nombre=="Juan")
         {
-            if(series[j].idSerie==loser[i].idSerie)
+            for(j=0;j<10;j++)
             {
-                printf("%s", series[i].titulo);
-                break;
+                if()
             }
         }
     }
-}*/
-
-
-/*for(j=0;j<10;j++)
-        {
-
-            if(clientes[j].idSerie==losers[i].idSerie)
-            {
-               losers[i].cont++;
-            }
-        }
-    if(i==0)
-    {
-        min=losers[i].cont;
-    }
-    else if(min<losers[i].cont)
-    {
-        min=losers[i].cont;
-        printf("%d\n%d", min, losers[j].idSerie);
-    }
-        printf("\n%d", losers[i].cont);
-
-    //FALTA TERMINAR Y HACER CON ESTRUCTURA QUE UNA ECLIENTESERIE*/
-
-    //menor, 2do barrido: cuales cumplen con ese menor
+}
