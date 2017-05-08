@@ -44,6 +44,13 @@ typedef struct
     char correoElectronico[100];
 }eAUXusuarios;
 
+typedef struct
+{
+    int idNick;
+    int contadorUsuarioComentario;
+
+}eAUXmaxComentarioUsuario;
+
 void inicializarEstado(eUsuario[], int);
 void inicializarEstadoComentario(eComentario[], int);
 void inicializarNICK(eUsuario[], int);
@@ -53,6 +60,7 @@ void modificarUsuario(eUsuario[], int);
 void bajaDeUsuario(eUsuario[], int);
 void nuevoComentario(eUsuario[], int,eComentario[],int, eComentarioUsuario[],int);
 void nuevoMeGusta(eUsuario[],int,eComentario[], int,eComentarioUsuario[], int);
+void mayorCantidadDeComentarios(eComentario[],int,eUsuario[],int,eComentarioUsuario[], int);
 
 int main()
 {
@@ -75,8 +83,8 @@ int main()
         printf("\n1- Alta de usuario\n");//ok
         printf("2- Modificar datos de usuario\n");//ok
         printf("3- Baja de usuario\n");//ok
-        printf("4- Nuevo comentario\n");
-        printf("5- Nuevo ME GUSTA\n");
+        printf("4- Nuevo comentario\n");//ok
+        printf("5- Nuevo ME GUSTA\n");//ok
         printf("6- Informar\n");
         printf("7- Listado de usuarios\n");
         printf("8- Salir\n");
@@ -106,6 +114,12 @@ int main()
                 break;
 
             case 6:
+                printf("\n1. El usuario con mayor cantidad de comentarios:\n");
+                mayorCantidadDeComentarios(comentarios,30,usuarios,20,comentarioPorUsuario,30);
+                printf("\n2. El comentario con mayor cantidad de “Me gusta”:\n");
+                //mayorCantidadDeMG
+                printf("\n3. El valor promedio de “Me gusta”:\n");
+                //promedioMeGusta
                 break;
 
             case 7:
@@ -168,6 +182,7 @@ void altaDeUsuario(eUsuario usuario[], int tam)
     {
         if(usuario[i].estado==-1)
         {
+            usuario[i].estado=i;
             disponible=i;
         }
     }
@@ -326,9 +341,10 @@ void nuevoComentario(eUsuario usuario[], int tamUs, eComentario comentario[], in
     {
         if(comentario[i].estadoComentario==-1)
         {
+            comentario[i].estadoComentario=i;
             disponible=i;
+            break;
         }
-        id=i;
     }
     if(disponible!=tamCom && disponible!=-1)
     {
@@ -344,7 +360,7 @@ void nuevoComentario(eUsuario usuario[], int tamUs, eComentario comentario[], in
                     scanf("%d", &comentarioUsuario[disponible].clave);
                     if(usuario[j].clave==comentarioUsuario[disponible].clave)
                     {
-                        comentario[j].idComentario=id;
+                        comentario[j].idComentario=disponible;
                         printf("Escriba el comentario:\n");
                         fflush(stdin);
                         gets(comentario[j].textoComentario);
@@ -378,15 +394,69 @@ void nuevoMeGusta(eUsuario usuario[], int tamUs, eComentario comentario[], int t
                         printf("Ingrese identificador del comentario:\n");
                         fflush(stdin);
                         scanf("%d", &auxIDCOM);
-                        printf("%d\n%d\n", auxIDCOM, comentario[i].idComentario);
                         if(auxIDCOM==comentario[i].idComentario)
                         {
                             comentario[i].contadorMG++;
-                            printf("Este comentario ahora tiene esta cantidad de MG:\n%d",comentario[i].contadorMG);
+                            printf("Este comentario ahora tiene esta cantidad de MG:%d\n",comentario[i].contadorMG);
                         }
                     }
                 }
             }
         }
+}
+
+void mayorCantidadDeComentarios(eComentario comentarios[], int tamCom, eUsuario usuarios[], int tamUs, eComentarioUsuario comentarioUsuario[], int tamCU)
+{
+    int i, j, k, max;
+
+    eAUXmaxComentarioUsuario auxComentarioUsuario[20];
+
+    for(i=0;i<tamUs;i++)
+    {
+        auxComentarioUsuario[i].contadorUsuarioComentario=0;
+    }
+
+    for(i=0;i<tamUs;i++)
+    {
+        for(j=0;j<tamCU;j++)
+        {
+            if(usuarios[i].idNick==comentarioUsuario[j].idNick)
+            {
+                auxComentarioUsuario[i].idNick=usuarios[i].idNick;
+                auxComentarioUsuario[j].contadorUsuarioComentario++;
+            }
+        }
+    }
+
+    for(i=0; i<tamUs;i++)
+    {
+         if(i==0)
+        {
+            max=auxComentarioUsuario[i].contadorUsuarioComentario;
+        }
+        else
+        {
+            if(auxComentarioUsuario[i].contadorUsuarioComentario>max)
+            {
+                max=auxComentarioUsuario[i].contadorUsuarioComentario;
+            }
+
+        }
+    }
+
+    for(i=0; i<tamUs; i++)
+    {
+        if(auxComentarioUsuario[i].contadorUsuarioComentario==max)
+        {
+            for(k=0;k<tamUs;k++)
+            {
+                if(usuarios[k].idNick==auxComentarioUsuario[i].idNick)
+                {
+                    printf("%s\n", usuarios[k].nombre);
+
+                }
+            }
+        }
+    }
 
 }
