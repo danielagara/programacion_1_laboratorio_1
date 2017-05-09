@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1494291478 source:d:\garat_daniela\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"lib.c"
+	"strings.h"
+
+1494291478 d:\garat_daniela\lib.h
+
+1494291546 d:\garat_daniela\lib.c
+	"lib.h"
+	"strings.h"
+
