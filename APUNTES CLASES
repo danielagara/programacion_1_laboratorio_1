@@ -271,10 +271,129 @@ Al inicio del archivo tambien se debera documentar que hace esa funcion de la si
 Por ultimo, luego de crear esos 2 archivos, en el archivo main debemos llamar a nuestra biblioteca: #include <stdlib.h> (el nombre
 de la biblioteca seria stdlib.h).
 
-CLASE 5: FALTA AGREGAR ESTA CLASE, TODO LO DE ARRAYS.
+CLASE 5 y 6: 
+Un vector o array es un conjunto de elementos del mismo tipo (enteros, flotantes, caracteres) que se agrupan bajo un mismo nombre y se diferencian entre sí por un índice.
+La forma genérica de declararlo en un programa es la siguiente:
+Tipo nombre[cantidad].
 
-CLASE 6:
-Los vectores en paralelo son aquellos que se relacionan, tienen la misma cantidad de componentes.(ejercicio de legajo).
+ej int vector[5];
 
+Para acceder a cualquier valor del vector debemos especificar su indice, por ej si el vector es de 5 elementos los indices serian:
+v[0], v[1], v[2], v[3], v[4];
+
+Hay 2 maneras de cargar elementos dentro de un vector:
+
+-CARGA SECUENCIAL:
+Para realizar la carga se necesitaria una estructura de control que puede ser el bucle for.
+Un ejemplo de programa que nos permite cargar un vector en forma secuencial es el siguiente:
+
+	#include <stdio.h>
+	void main(void)
+	{
+		int v[5],i;
+		for (i=0;i<5;i++)
+		{
+			printf("Ingrese valor a cargar en el vector");
+			scanf("%d",&v[i]);
+		}
+	}
+
+De esta manera, le damos la indicacion de que en el indice del valor de i, se cargue el numero que ingresaria el usuario.
+
+-CARGA SECUENCIAL:
+ Para analizar esto comenzaremos por el caso más simple y dejando que el usuario decida cuando terminar de cargar elementos en el
+vector. De acuerdo a esto, como no se sabe cuántos elementos se van a cargar ni en qué orden, debemos primero inicializar todos los 
+elementos del vector en un valor conocido que normalmente es cero.
+Seguidamente se debe usar un ciclo de control en el cuál la cantidad de iteraciones que se realicen quede fijada por alguna condición 
+que acepte el usuario, en este caso el ciclo que más se adecua es el while o do while.
+Un ejemplo de programa puede ser el siguiente:
+
+	#include <stdio.h>
+	void main(void)
+	{
+		int v[5],pos,i;
+		char seguir;
+		for(i=0;i<5;i++)
+			v[i]=0; // inicializamos vector
+		do
+		{
+			printf("Ingrese posici¢n");
+			scanf("%d",&pos);
+			printf("Ingrese valor a cargar en el vector");
+			scanf("%d",&v[pos]);
+			printf("Desea ingresar otro dato S/N?");
+			scanf("%c",&seguir);
+		}while(seguir=='s');
+	}
+
+La definicion de vectores en paralelo se toma en el sentido de que se utilicen 2 vectores con igual cantidad de elementos, en el cual
+se relacionan los datos que se encuentran cargados en cada vector con igual posicion:
+legajos[5];
+dni[5];
+
+legajos[1]=6;
+dni[1]=41063474;
+
+Entonces se veria que para el legajo en la posicion 1 igual a 6, corresponde el dni en la misma posicion.
+
+Para realizar una busqueda de datos en los vectores, se hace lo que se llama como 'burbujeo', en donde se recorre al vector en su totalidad
+con un for, y con un if buscamos el dato que queremos hasta que se cumpla la condicion. De la siguiente manera:
+
+	mayor=vec[0];//BUSCA MAYOR
+	for(i=0;i<MAX;i++)
+	{
+		if(vec[i]>mayor)
+		{
+		mayor=vec[i];
+		/* otras asignaciones */
+		}
+	}
+O una busqueda de manera mas general se ejecutaria de la siguiente manera
+
+	flag=0;
+	printf("Ingrese numero a buscar");
+	scanf("%d",&num);
+	for(i=0;i<MAX;i++)
+	{
+		if(num==vec[i])
+		{
+			/* asignaciones y modificaciones */
+			printf("Se encontro el numero");
+			flag=1;
+		}
+	}
+	if(flag==0)
+		printf("El numero no se encontro");
+		
+Ordenamiento del vector
+	for(i=0;i<FIL-1;i++)
+	{
+		for(j=i+1;j<FIL;j++)
+		{
+			if(vec[i]>vec[j])
+			{
+				aux=vec[i];
+				vec[i]=vec[j];
+				vec[j]=aux;
+			}
+		}
+	}
+	
 CLASE 7:
-*notas en cel*
+Strlen nos va a decir cuantos caracteres hay en la cadena
+Strlen(cadena); cin libreria string.h
+
+Strcpy sirve para copiar una cadena de caracteres a otra, strcpy(cadenaalaquecopio, cadenayaexistente);
+
+Strcmp para comparar 2 cadenas de caracteres te devuelve 1 si la  cadena estaba antes en el diccionario por alguna letra o 0 cuando son 
+iguales o -1 si estaba despues
+
+Stricmp no discrimina si es mayuscula o minuscula
+
+Strcat para concatenar 2 cadenas de caracteres, va de a pares, saca el \0 del final. Para que quede con apellido concateno la primera 
+cadena a " " para que me tome el espacio, y ahi concateno esa cadena ya cambiada a la segunda cadena.OJO LA CADENA A LA CONCATENE LA 
+SIGUIENTE DEBE TENER EL TAMAÑO SUFICIENTE PARA TENER LA OTRA, LA VARIABLE RECEPTORA DEBERIA TENER POR LO MENOS EL DOBLE DE LA OTRA                        
+Matrices: Cada columna es un caracter y cada fila es un nombre. 5 nombres de 20 carac cada uno
+Si quiero guardar un nombre en especifico tengo que aclarar el sub indice strcpy(nombres[1], "juan") ponemos en la primera fila ese 
+nombre                        
+No debo aclarar la columna porque si no estaria pasando un caracter solo
