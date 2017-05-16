@@ -397,3 +397,32 @@ Matrices: Cada columna es un caracter y cada fila es un nombre. 5 nombres de 20 
 Si quiero guardar un nombre en especifico tengo que aclarar el sub indice strcpy(nombres[1], "juan") ponemos en la primera fila ese 
 nombre                        
 No debo aclarar la columna porque si no estaria pasando un caracter solo
+
+CLASE MIL PUNTEROS:(AGREGAR LAS QUE FALTAN)
+
+PUNTEROS:
+puntero es cualquier variable que guarde una direccion de memoria.
+nos sirve para cambiar el valor de una variable cuando no estemos en el mismo ambito donde fue declarada, por ej en una funcion.
+hay punteros por tipo de dato, ej si declaro un puntero de tipo int solo puedo guardar direccion de memoria de variable tipo int
+como declarar un puntero a entero: int* p;
+SOLO GUARDA DIRECCION DE MEMORIA
+en el printf se muestran las variable puntero como %x
+cuando quiero referirme al valor guardado en la direccion de memoria del puntero: uso de nuevo * en frente del nombre del puntero, ej *p me refiero
+al valor de la direccion de memoria que tiene p apunta.
+
+ENTONCES:
+p==&x PUNTERO P IGUAL A LA DIRECCION DE MEMORIA DE VARIABLE X
+*p==x EL VALOR DE LA DIRECCION DE MEMORIA DE X ES IGUAL * P 
+
+se pueden definir de varias maneras los punteros:
+r=&x;
+r=h;(h siendo otro puntero)
+r=01233adnax;(harcodeando la direccion de memoria)
+
+un vector es un puntero en el cual la direccion de memoria cargada es la del vector en la posicion 0.
+
+aritmetica de punteros
+vec+1(uno pesa 4 bytes, entonces a la direccion de memoria de 0 le sumo 4 bytes, me corrro a la dire de memoria de 1)
+y para hacerlo asi se harua *(vec+1)=10; cargue en la pos 1 del vector, 10 desde puntero
+
+*(vec+1)NOTACION DE PUNTEROS==vec[1]NOTACION VECTORES
