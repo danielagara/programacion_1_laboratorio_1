@@ -426,3 +426,55 @@ vec+1(uno pesa 4 bytes, entonces a la direccion de memoria de 0 le sumo 4 bytes,
 y para hacerlo asi se harua *(vec+1)=10; cargue en la pos 1 del vector, 10 desde puntero
 
 *(vec+1)NOTACION DE PUNTEROS==vec[1]NOTACION VECTORES
+
+CLASE DE PUNTEROS 2:
+
+void* puntero que apunta a cualquier tipo de dato pero es necesario castearlo
+
+trabajar en estatico y dinamico:
+hasta ahora, trabajamos en estatico, definiendo el tipo de dato y la variable.
+
+para trabajar en dinamico, vamos a utilizar la funcion malloc, ya en strlib.h 
+
+ej
+int x; ªªse reserva espacio en la memoria estatica para la variable x de tipo entero
+
+para trabajar en la memoria dinamica:
+
+int* p; \\declaro una variable puntero de tipo entero para grardar la direcc de memoria
+
+malloc(sizeof(int)); \\va a buscar 4 bytes de memoria, y malloc me a a devolver la direccion de memoria pura donde estos comienzan
+void*; \\es lo que devuelve malloc, y este puntero se puede transformar en calqier tipo de dato
+
+p=(int*)malloc(sizeof(int));\\casteo para p 
+
+si no encuentra nada malloc me va a devolver null, osea que no apunta nada, y no se puede utilizar
+por eso debmos siempre erificar que sea distinto de null de la siguiente manera:
+
+if(p==null)
+{
+print("NO SE PUDO RESERVAR EN MEMORIA");
+exit(1); \\salida elegante ya que al no encontrar se va a colgar
+}
+
+para liberar un puntero, es decir, sacarle la direccion de memoria al puntero que la guardaba:
+free(p); \\me libera al puntero p
+
+
+uso realloc para agrandar elpuntero que ya tenia, doble parametro
+
+realloc(x,sizeof(int)*10); //el puntero que y tenia, y el doble del tamaño, es decir, el que tenia mas el que necesito, si tenia 5 y nec4¡u74esito 5 mas entonces 10
+
+realloc si consigue va a darnos los bytes al costado de los que ya teniamos, si estos estan ocupados, va a reposicionar todo 
+los bytes pedidos n otro lugar para que sten todos juntos, y si no hay el suficiente espacio para todos los bytes pedidos 
+juntos, entonces deuelve null
+
+cuando usamos realloc no debemos usarlo de la sig manera
+x=(int)realloc(x,sizeof(int)*10); 
+ya que si hago eso, en el caso de que encuentre espacio, todo junto o lo mude, va a estar todo bien, pero si no encuentra espacio
+es decir, devuelve null, nos va a pizar la direccion de nuestro puntero, y los datos dentro de este se pierde
+
+por eso, lo pido con realloc a un auxiliar, y si este es distinto d null, despues lo igualo al que ya tenia, en este caso x
+
+
+otra funcion es calloc, que le pasamos un array de enteros y el tamaño, y lo inicializa todo en 0
