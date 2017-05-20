@@ -478,3 +478,10 @@ por eso, lo pido con realloc a un auxiliar, y si este es distinto d null, despue
 
 
 otra funcion es calloc, que le pasamos un array de enteros y el tamaño, y lo inicializa todo en 0
+
+principio de archivos binarios
+para abrir estos archios vamos a usar fopen, ya que va a raducir correcamene en el contenido que tengamos en el mismo
+todas las funciones van a empezar con f de file
+primerao vamos a denominar un puntero de tipo file
+FILE* f;
+
