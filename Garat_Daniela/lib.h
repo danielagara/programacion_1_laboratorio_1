@@ -20,6 +20,7 @@ typedef struct
 {
     int idProyecto;
     char nombre[50];
+    int estado;
 }eProyecto;
 
 typedef struct
@@ -36,6 +37,7 @@ typedef struct
 	int idProyecto;
 	int idProgramador;
 	int horasATrabajar;
+	int estado;
 }eProyectoProgramador;
 
 typedef struct
@@ -45,11 +47,17 @@ typedef struct
 }eAUXProyectoMasDemandante;
 
 void inicializarEstado(eProgramador[], int);
+void inicializarIdProgramador(eProgramador[], int);
+void inicializarIdProyecto(eProyecto[], int );
+void inicializarIdProyectoProgramador(eProyectoProgramador[], int);
 void definirCategorias(eCategoria[], int);
 void altaDeprogramador(eProgramador [], int , eCategoria[], int);
 void modificarUsuario(eProgramador[], int );
 void bajaDeProgramador(eProgramador[], int);
 void asignarProgramadorAProyecto(eProgramador[], int, eProyecto[], int, eProyectoProgramador[], int );
 void mostrarProgramadores(eProgramador[], int, eCategoria[], int, eProyectoProgramador[], int, eProyecto[], int);
+void mostrarProyectos(eProgramador[], int, eCategoria[], int, eProyectoProgramador[], int, eProyecto[], int);
+void mostrarProyectosPorProgramador(eProgramador[], int, eProyectoProgramador[], int, eProyecto[], int);
+
 
 #endif // LIB_H_INCLUDED

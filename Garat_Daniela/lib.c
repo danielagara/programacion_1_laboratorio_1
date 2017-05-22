@@ -17,6 +17,58 @@ void inicializarEstado(eProgramador programador[], int tamProg)
     }
 }
 
+/** \brief FUNCION INICIALIZAR ID
+ *
+ * \param eProgramador Utiliza la estructura con la informacion de los programadores
+ * \param tamProg El tamaño que se le haya asignado al array
+ * \return void
+ *
+ */
+
+ void inicializarIdProgramador(eProgramador programador[], int tamProg)
+{
+    int i;
+    for(i=0;i<tamProg;i++)
+    {
+        programador[i].idProgramador=-1;
+    }
+}
+
+/** \brief FUNCION INICIALIZAR ID PROGPROYE
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+void inicializarIdProyectoProgramador(eProyectoProgramador proyectoPorProgramador[], int tamPP)
+{
+    int i;
+    for(i=0;i<tamPP;i++)
+    {
+        proyectoPorProgramador[i].estado=-1;
+    }
+}
+
+/** \brief FUNCION INICIALIZAR PROYECTO ESTADO
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+ void inicializarIdProyecto(eProyecto proyecto[], int tamProye)
+{
+    int i;
+    for(i=0;i<tamProye;i++)
+    {
+        proyecto[i].idProyecto=-1;
+    }
+}
+
+
 /** \brief FUNCION DEFINIR CATEGORIAS
  *
  * \param
@@ -248,9 +300,23 @@ void modificarUsuario(eProgramador programador[], int tamProg)
  *
  */
 
- void asignarProgramadorAProyecto(eProgramador programador[], int tamProg, eProyecto proyecto[], int tamProye, eProyectoProgramador proyectoProgramador[], int tamPP)
+void asignarProgramadorAProyecto(eProgramador programador[], int tamProg, eProyecto proyecto[], int tamProye, eProyectoProgramador proyectoProgramador[], int tamPP)
 {
-    int i, j, contadorCantidadProgramadores=0;
+	int i, j, k;
+	char respuesta;
+	int auxIDProyecto;
+	int contadorProyectos=0;
+	int contadorCantidadProgramadores=0;
+	int auxIdProgramador;
+	int disponible=-1;
+
+	for(i=0;i<tamProye;i++)
+	{
+		if(proyecto[i].idProyecto!=-1)
+		{
+			contadorProyectos++;
+		}
+	}
 
 	for(i=0;i<tamProg;i++)
 	{
@@ -260,29 +326,115 @@ void modificarUsuario(eProgramador programador[], int tamProg)
 		}
 	}
 
-	for(i=0;i<contadorCantidadProgramadores;i++)
+	printf("Quiere ingresar un nuevo proyecto (c) o asignar uno existente (e)?");
+	fflush(stdin);
+	scanf("%c", &respuesta);
+	if(respuesta=='e')
 	{
-		printf("ESTOS SON LOS PROGRAMADORES DISPONIBLES:\nNombre:%s\nId del programador:%d\n", programador[i].nombre, programador[i].idProgramador);
-		printf("A que programador elige? Ingrese su id\n");
+		for(i=0;i<contadorProyectos;i++)
+		{
+			printf("Los proyectos ya ingresados son:\n");
+			printf("ID DE PROYECTO: %d  NOMBRE DE PROYECTO: %s\n", proyecto[i].idProyecto, proyecto[i].nombre);
+		}
+		printf("Ingrese el id del proyecto que quiere asignar: ");
 		fflush(stdin);
-		scanf("%d",&proyectoProgramador[i].idProgramador);
-		for(j=0;j<tamProg;j++)
-        {
-            if(proyectoProgramador[i].idProgramador==programador[j].idProgramador)
-            {
-                printf("A que proyecto lo quiere asignar? Ingrese el id del mismo\n");
-                fflush(stdin);
-                scanf("%d", &proyectoProgramador[i].idProyecto);
-                proyecto[j].idProyecto=proyectoProgramador[i].idProyecto;
-                printf("Ingrese la cantidad de horas que el programador debe trabajar:\n");
-                fflush(stdin);
-                scanf("%d", &proyectoProgramador[i].horasATrabajar);
-                printf("EL PROYECTO HA SIDO ASIGNADO CORRECTAMENTE:\n");
-            }
-        }
+		scanf("%d", &auxIDProyecto);
+		for(i=0;i<contadorProyectos;i++)
+		{
+			if(auxIDProyecto==proyecto[i].idProyecto)
+			{
+				printf("El proyecto que usted eligio es: %s \n", proyecto[i].nombre);
+
+				printf("Ingrese el id del programador al que quiere asignar el proyecto:\n");
+				fflush(stdin);
+				scanf("%d", &auxIdProgramador);
+				for(j=0;j<contadorCantidadProgramadores;j++)
+				{
+					if(auxIdProgramador==programador[j].idProgramador)
+					{
+						for(k=0;k<tamPP;k++)
+						{
+							if(proyectoProgramador[k].estado==-1)
+							{
+								proyectoProgramador[k].estado=i;
+								disponible=i;
+								break;
+							}
+						}
+						if(disponible!=tamPP && disponible!=-1)
+						{
+							proyectoProgramador[disponible].idProgramador=programador[j].idProgramador;
+							proyectoProgramador[disponible].idProyecto=proyecto[i].idProyecto;
+							printf("Ingrese la cantidad de horas que el programador debe trabajar:\n");
+							fflush(stdin);
+							scanf("%d", &proyectoProgramador[disponible].horasATrabajar);
+							printf("EL PROYECTO FUE ASIGNADO CORRECTAMENTE");
+							break;
+						}
+						else
+						{
+							printf("NO HAY LUGAR");
+							break;
+						}
+					}
+				}
+			}
+			break;
+		}
+	}
+
+	if(respuesta=='c')
+	{
+		printf("Ingrese el id del proyecto que quiere crear: ");
+		fflush(stdin);
+		scanf("%d", &auxIDProyecto);
+		for(i=0;i<tamProye;i++)
+		{
+			if(auxIDProyecto!=proyecto[i].idProyecto)
+			{
+				proyecto[i].idProyecto=auxIDProyecto;
+				printf("Ingrese el nombre del proyecto:  ");
+				fflush(stdin);
+				gets(proyecto[i].nombre);
+				printf("Ingrese el id del programador al que quiere asignar el proyecto:\n");
+				fflush(stdin);
+				scanf("%d", &auxIdProgramador);
+				for(j=0;j<contadorCantidadProgramadores;j++)
+				{
+					if(auxIdProgramador==programador[j].idProgramador)
+					{
+						for(k=0;k<tamPP;k++)
+						{
+							if(proyectoProgramador[k].estado==-1)
+							{
+								proyectoProgramador[k].estado=i;
+								disponible=i;
+								break;
+							}
+						}
+
+						if(disponible!=tamPP && disponible!=-1)
+						{
+							proyectoProgramador[disponible].idProgramador=programador[j].idProgramador;
+							proyectoProgramador[disponible].idProyecto=proyecto[i].idProyecto;
+							printf("Ingrese la cantidad de horas que el programador debe trabajar:\n");
+							fflush(stdin);
+							scanf("%d", &proyectoProgramador[disponible].horasATrabajar);
+							printf("EL PROYECTO FUE ASIGNADO CORRECTAMENTE");
+							break;
+						}
+						else
+						{
+							printf("NO HAY LUGAR");
+							break;
+						}
+					}
+				}
+			}
+			break;
+		}
 	}
 }
-
 /** \brief FUNCION MOSTRAR PROGRAMADORES
  *
  * \param
@@ -334,4 +486,128 @@ void mostrarProgramadores(eProgramador programador[], int tamProg, eCategoria ca
 
     }
 
+}
+
+/** \brief FUNCION MOSTRAR PROYECTOS
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+void mostrarProyectos(eProgramador programador[], int tamProg, eCategoria categoria[], int tamCat, eProyectoProgramador proyectoProgramador[], int tamPP, eProyecto proyecto[], int tamProye)
+{
+    int i, j, k, l;
+	int contadorCantidadProgramadores=0;
+	int contadorProyectos=0;
+	int contadorEstadoPP=0;
+
+	for(i=0;i<tamProye;i++)
+	{
+		if(proyecto[i].idProyecto!=-1)
+		{
+			contadorProyectos++;
+		}
+	}
+
+	for(i=0;i<tamProg;i++)
+	{
+		if(programador[i].estado!=-1)
+		{
+			contadorCantidadProgramadores++;
+		}
+	}
+
+	for(i=0;i<tamPP;i++)
+    {
+        if(proyectoProgramador[i].estado!=-1)
+		{
+			contadorEstadoPP++;
+		}
+    }
+
+    for(i=0;i<contadorProyectos;i++)
+    {
+        printf("\n---------------");
+        printf("\n\nID PROYECTO:\n\n%d ", proyecto[i].idProyecto);
+        printf("\n\nNOMBRE PROYECTO:\n\n%s ", proyecto[i].nombre);
+		for(j=0;j<contadorCantidadProgramadores;j++)
+		{
+			for(k=0;k<contadorEstadoPP;k++)
+			{
+				if(programador[j].idProgramador==proyectoProgramador[k].idProgramador)
+				{
+					printf("\n\nPROGRAMADOR:\n\n%s ", programador[j].nombre);
+					for(l=0;l<tamCat;l++)
+					{
+						if(programador[j].idCategoria==categoria[l].idCategoria)
+						{
+							printf("\n\nDESCRIPCION DE CATEGORIA:\n\n%s ", categoria[l].descripcion);
+						}
+					}
+				}
+			}
+		}
+
+    }
+
+}
+
+/** \brief FUNCION PROYECTOS POR PROGRAMADOR
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+void mostrarProyectosPorProgramador(eProgramador programador[], int tamProg, eProyectoProgramador proyectoProgramador[], int tamPP, eProyecto proyecto[], int tamProye)
+{
+    int i, j, k, l;
+	int contadorCantidadProgramadores=0;
+	int contadorProyectos=0;
+	int auxIDProgramador;
+
+	for(i=0;i<tamProye;i++)
+	{
+		if(proyecto[i].idProyecto!=-1)
+		{
+			contadorProyectos++;
+		}
+	}
+
+	for(i=0;i<tamProg;i++)
+	{
+		if(programador[i].estado!=-1)
+		{
+			contadorCantidadProgramadores++;
+		}
+	}
+
+	for(i=0;i<contadorCantidadProgramadores;i++)
+	{
+		printf("\n---------------");
+        printf("\n\nID PROGRAMADOR:\n\n%d ", programador[i].idProgramador);
+        printf("\n\nNOMBRE:\n\n%s ", programador[i].nombre);
+		printf("\n\nAPELLIDO:\n\n%s ", programador[i].apellido);
+	}
+
+	printf("Ingrese el id del programador a consultar:  ");
+	fflush(stdin);
+	scanf("%d", &auxIDProgramador);
+	for(i=0;i<tamPP;i++)
+	{
+		if(auxIDProgramador==proyectoProgramador[i].idProgramador)
+		{
+			printf("\n\nID PROYECTO:\n\n%d ", proyectoProgramador[i].idProyecto);
+			for(j=0;j<contadorProyectos;j++)
+			{
+				if(proyectoProgramador[i].idProyecto==proyecto[j].idProyecto)
+				{
+					printf("\n\nNOMBRE PROYECTO:\n\n%s ", proyecto[j].nombre);
+				}
+			}
+		}
+	}
 }

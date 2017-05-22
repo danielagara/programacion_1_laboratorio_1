@@ -15,17 +15,20 @@ int main()
     eCategoria categoria[3];
 
     inicializarEstado(programador,50);
+    inicializarIdProgramador(programador,50);
+    inicializarIdProyecto(proyecto,1000);
+    inicializarIdProyectoProgramador(proyectoPorProgramador,10000);
     definirCategorias(categoria,3);
 
     while(seguir!='n')
     {
         printf("\n1- Alta de programador\n");//OK
         printf("2- Modificar datos de programador\n");//OK
-        printf("3- Baja de programador\n");//OK
-        printf("4- Asignar programador a proyecto\n");//OK
+        printf("3- Baja de programador\n");//OK FALTA SACAR DE PROYECTOS
+        printf("4- Asignar programador a proyecto\n");//OK FALTA ASIGNAR MISMO PROYECTO A VARIOS PROG
         printf("5- Listado de programadores\n");//OK
-        printf("6- Listado de proyectos\n");
-        printf("7- Listado de proyectos de programador\n");
+        printf("6- Listado de proyectos\n");//OK
+        printf("7- Listado de proyectos de programador\n");//OK
         printf("8- Poyecto demandante\n");
         printf("9- Salir\n");
 
@@ -54,10 +57,11 @@ int main()
                 break;
 
             case 6:
-
+                mostrarProyectos(programador,50,categoria,3,proyectoPorProgramador,10000,proyecto,1000);
                 break;
 
             case 7:
+                mostrarProyectosPorProgramador(programador,50,proyectoPorProgramador,10000,proyecto,1000);
                 break;
 
 			case 8:
