@@ -353,8 +353,8 @@ void asignarProgramadorAProyecto(eProgramador programador[], int tamProg, eProye
 		{
 		    if(proyecto[i].estado!=-1)
             {
-                printf("Los proyectos ya ingresados son:\n");
-                printf("ID DE PROYECTO: %d  NOMBRE DE PROYECTO: %s\n", proyecto[i].idProyecto, proyecto[i].nombre);
+                printf("\nLos proyectos ya ingresados son:\n");
+                printf("\nID DE PROYECTO: %d  NOMBRE DE PROYECTO: %s\n", proyecto[i].idProyecto, proyecto[i].nombre);
             }
 		}
 		printf("Ingrese el id del proyecto que quiere asignar: ");
@@ -376,7 +376,7 @@ void asignarProgramadorAProyecto(eProgramador programador[], int tamProg, eProye
 					}
                 }
 
-                printf("Ingrese el id del programador al que quiere asignar el proyecto:\n");
+                printf("\n\nIngrese el id del programador al que quiere asignar el proyecto:\n");
                 fflush(stdin);
                 scanf("%d", &auxIdProgramador);
                 for(j=0;j<tamProg;j++)
@@ -396,10 +396,10 @@ void asignarProgramadorAProyecto(eProgramador programador[], int tamProg, eProye
                         {
                             proyectoProgramador[disponible].idProgramador=programador[j].idProgramador;
                             proyectoProgramador[disponible].idProyecto=proyecto[i].idProyecto;
-                            printf("Ingrese la cantidad de horas que el programador debe trabajar:\n");
+                            printf("\n\nIngrese la cantidad de horas que el programador debe trabajar:\n");
                             fflush(stdin);
                             scanf("%d", &proyectoProgramador[disponible].horasATrabajar);
-                            printf("EL PROYECTO FUE ASIGNADO CORRECTAMENTE");
+                            printf("\n\nEL PROYECTO FUE ASIGNADO CORRECTAMENTE\n\n");
                             break;
                         }
                         else
@@ -596,22 +596,23 @@ void mostrarProyectos(eProgramador programador[], int tamProg, eProyectoPrograma
 							contadorSenior++;
 						}
 
-                        printf("\n\ID PROYECTO:\n\n%d ", proyecto[j].idProyecto);
+                        printf("\n\-------------------------:\n\n");
+                        printf("\n\nID PROYECTO:\n\n%d ", proyecto[j].idProyecto);
                         printf("\n\nNOMBRE PROYECTO:\n\n%s ", proyecto[j].nombre);
-                        printf("LA CANTIDAD DE PROGRAMADORES DE ACUERDO A SU CATEGORIA SON:\n\n");
+                        printf("\n\nLA CANTIDAD DE PROGRAMADORES DE ACUERDO A SU CATEGORIA SON:\n\n");
                         if(contadorJunior!=0)
                         {
-                            printf("JUNIOR: %d   \n", contadorJunior);
+                            printf("\nJUNIOR: %d   \n", contadorJunior);
                         }
 
                         if(contadorSemiSenior!=0)
                         {
-                            printf("SEMI-SENIOR: %d  \n", contadorSemiSenior);
+                            printf("\nSEMI-SENIOR: %d  \n", contadorSemiSenior);
                         }
 
                         if(contadorSenior!=0)
                         {
-                            printf("SENIOR: %d   \n", contadorSenior);
+                            printf("\nSENIOR: %d   \n", contadorSenior);
                         }
 					}
 
