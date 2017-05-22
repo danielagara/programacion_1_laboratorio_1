@@ -43,21 +43,22 @@ typedef struct
 typedef struct
 {
     int idProyecto;
-    int contadorProyectoDemandante;
-}eAUXProyectoMasDemandante;
+    int contadorVecesProyecto;
+}eProyectoMasDemandante;
 
 void inicializarEstado(eProgramador[], int);
 void inicializarIdProgramador(eProgramador[], int);
 void inicializarIdProyecto(eProyecto[], int );
-void inicializarIdProyectoProgramador(eProyectoProgramador[], int);
+void inicializarEstadoProyecto(eProyecto proyecto[], int tamProye);
+void inicializarEstadoProyectoProgramador(eProyectoProgramador[], int);
 void definirCategorias(eCategoria[], int);
 void altaDeprogramador(eProgramador [], int , eCategoria[], int);
 void modificarUsuario(eProgramador[], int );
-void bajaDeProgramador(eProgramador[], int);
+void bajaDeProgramador(eProgramador[], int, eProyectoProgramador[], int);
 void asignarProgramadorAProyecto(eProgramador[], int, eProyecto[], int, eProyectoProgramador[], int );
 void mostrarProgramadores(eProgramador[], int, eCategoria[], int, eProyectoProgramador[], int, eProyecto[], int);
-void mostrarProyectos(eProgramador[], int, eCategoria[], int, eProyectoProgramador[], int, eProyecto[], int);
+void mostrarProyectos(eProgramador[], int, eProyectoProgramador[], int, eProyecto[], int);
 void mostrarProyectosPorProgramador(eProgramador[], int, eProyectoProgramador[], int, eProyecto[], int);
-
+void saberPoyectoMasDemandante(eProyectoProgramador[], int, eProyecto[], int, eProyectoMasDemandante[], int);
 
 #endif // LIB_H_INCLUDED

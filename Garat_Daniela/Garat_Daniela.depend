@@ -25,3 +25,16 @@
 	"lib.h"
 	"strings.h"
 
+1495481645 source:c:\users\daniela\documents\facu\programacion_1_laboratorio_1-master\programacion_1_laboratorio_1-master\garat_daniela\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"lib.c"
+	"strings.h"
+
+1495483151 c:\users\daniela\documents\facu\programacion_1_laboratorio_1-master\programacion_1_laboratorio_1-master\garat_daniela\lib.h
+
+1495482985 c:\users\daniela\documents\facu\programacion_1_laboratorio_1-master\programacion_1_laboratorio_1-master\garat_daniela\lib.c
+	"lib.h"
+	"strings.h"
+
