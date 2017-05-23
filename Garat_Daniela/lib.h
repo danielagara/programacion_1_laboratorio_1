@@ -51,6 +51,7 @@ void inicializarIdProgramador(eProgramador[], int);
 void inicializarIdProyecto(eProyecto[], int );
 void inicializarEstadoProyecto(eProyecto proyecto[], int tamProye);
 void inicializarEstadoProyectoProgramador(eProyectoProgramador[], int);
+void inicializarHorasProyectoProgramador(eProyectoProgramador[], int);
 void definirCategorias(eCategoria[], int);
 void altaDeprogramador(eProgramador [], int , eCategoria[], int);
 void modificarUsuario(eProgramador[], int );
@@ -60,5 +61,6 @@ void mostrarProgramadores(eProgramador[], int, eCategoria[], int, eProyectoProgr
 void mostrarProyectos(eProgramador[], int, eProyectoProgramador[], int, eProyecto[], int);
 void mostrarProyectosPorProgramador(eProgramador[], int, eProyectoProgramador[], int, eProyecto[], int);
 void saberPoyectoMasDemandante(eProyectoProgramador[], int, eProyecto[], int, eProyectoMasDemandante[], int);
+void mostrarProyectosValor(eProgramador[], int, eProyectoProgramador[], int, eProyecto[], int , eCategoria[], int);
 
 #endif // LIB_H_INCLUDED

@@ -21,6 +21,7 @@ int main()
     inicializarIdProyecto(proyecto,1000);
     inicializarEstadoProyecto(proyecto,1000);
     inicializarEstadoProyectoProgramador(proyectoPorProgramador,10000);
+    inicializarHorasProyectoProgramador(proyectoPorProgramador,10000);
     definirCategorias(categoria,3);
 
     while(seguir!='n')
@@ -32,8 +33,9 @@ int main()
         printf("5- Listado de programadores\n");//OK
         printf("6- Listado de proyectos\n");//OK
         printf("7- Listado de proyectos de programador\n");//OK
-        printf("8- Poyecto demandante\n");
-        printf("9- Salir\n");
+        printf("8- Poyecto demandante\n");//OK
+        printf("9- Todos los proyectos con su costo\n");
+        printf("10- Salir\n");
 
         fflush(stdin);
         scanf("%d", &opcion);
@@ -71,6 +73,9 @@ int main()
 			    saberPoyectoMasDemandante(proyectoPorProgramador,10000,proyecto,1000, proyectoMasDemandante,1000);
 				break;
             case 9:
+                mostrarProyectosValor(programador,50,proyectoPorProgramador,10000,proyecto,1000,categoria,3);
+                break;
+            case 10:
                 seguir='n';
                 break;
         }

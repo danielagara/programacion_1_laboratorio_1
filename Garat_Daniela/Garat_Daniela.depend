@@ -38,3 +38,16 @@
 	"lib.h"
 	"strings.h"
 
+1495495522 source:c:\users\alumno\desktop\garat_daniela\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"lib.c"
+	"strings.h"
+
+1495495522 c:\users\alumno\desktop\garat_daniela\lib.h
+
+1495499372 c:\users\alumno\desktop\garat_daniela\lib.c
+	"lib.h"
+	"strings.h"
+

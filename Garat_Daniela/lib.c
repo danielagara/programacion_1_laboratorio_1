@@ -34,7 +34,7 @@ void inicializarEstado(eProgramador programador[], int tamProg)
     }
 }
 
-/** \brief FUNCION INICIALIZAR ID PROGPROYE
+/** \brief FUNCION INICIALIZAR ESTADO PROGPROYE
  *
  * \param eProyectoProgramador Utiliza la estructura relacional
  * \param tamPP El tamaño que se le haya asignado al array
@@ -48,6 +48,23 @@ void inicializarEstadoProyectoProgramador(eProyectoProgramador proyectoPorProgra
     for(i=0;i<tamPP;i++)
     {
         proyectoPorProgramador[i].estado=-1;
+    }
+}
+
+/** \brief FUNCION INICIALIZAR HORAS PROGPROYE
+ *
+ * \param eProyectoProgramador Utiliza la estructura relacional
+ * \param tamPP El tamaño que se le haya asignado al array
+ * \return vois
+ *
+ */
+
+void inicializarHorasProyectoProgramador(eProyectoProgramador proyectoPorProgramador[], int tamPP)
+{
+    int i;
+    for(i=0;i<tamPP;i++)
+    {
+        proyectoPorProgramador[i].horasATrabajar=0;
     }
 }
 
@@ -120,6 +137,7 @@ void definirCategorias(eCategoria categoria[], int tamCat)
     }
 
 }
+
 
 /** \brief FUNCION ALTA DE PROGRAMADOR
  *
@@ -369,7 +387,7 @@ void asignarProgramadorAProyecto(eProgramador programador[], int tamProg, eProye
                 {
                     if(programador[l].estado!=-1 && programador[l].idProgramador!=-1)
 					{
-						printf("Los progamadores disponibles son:");
+						printf("Los progamadores disponibles son:\n\n");
 						printf("\n\nID PROGRAMADOR:\n\n%d ", programador[l].idProgramador);
 						printf("\n\nNOMBRE:\n\n%s ", programador[l].nombre);
 						printf("\n\nAPELLIDO:\n\n%s ", programador[l].apellido);
@@ -515,40 +533,34 @@ void mostrarProgramadores(eProgramador programador[], int tamProg, eCategoria ca
 	int auxPrecioXHora;
 	int auxHorasATrabajar;
 	int gananciaTotalProyecto;
-	int contadorCantidadProgramadores=0;
 
-	for(i=0;i<tamProg;i++)
-	{
-		if(programador[i].estado!=-1)
-		{
-			contadorCantidadProgramadores++;
-		}
-	}
-
-    for(i=0;i<contadorCantidadProgramadores;i++)
+    for(i=0;i<tamProg;i++)
     {
-        printf("\n---------------");
-        printf("\n\nID PROGRAMADOR:\n\n%d ", programador[i].idProgramador);
-        printf("\n\nNOMBRE:\n\n%s ", programador[i].nombre);
-		printf("\n\nAPELLIDO:\n\n%s ", programador[i].apellido);
-		for(j=0;j<tamCat;j++)
+		if(programador[i].estado!=-1 && programador[i].idProgramador!=-1)
 		{
-			if(programador[i].idCategoria==categoria[j].idCategoria)
+			printf("\n---------------");
+			printf("\n\nID PROGRAMADOR:\n\n%d ", programador[i].idProgramador);
+			printf("\n\nNOMBRE:\n\n%s ", programador[i].nombre);
+			printf("\n\nAPELLIDO:\n\n%s ", programador[i].apellido);
+			for(j=0;j<tamCat;j++)
 			{
-				auxPrecioXHora=categoria[j].pagoXHora;
-				printf("\n\nDESCRIPCION DE CATEGORIA:\n\n%s ", categoria[j].descripcion);
+				if(programador[i].idCategoria==categoria[j].idCategoria)
+				{
+					auxPrecioXHora=categoria[j].pagoXHora;
+					printf("\n\nDESCRIPCION DE CATEGORIA:\n\n%s ", categoria[j].descripcion);
+				}
 			}
-		}
-        for(k=0;k<tamPP;k++)
-		{
-			if(programador[i].idProgramador==proyectoProgramador[k].idProgramador)
+			for(k=0;k<tamPP;k++)
 			{
-				auxHorasATrabajar=proyectoProgramador[k].horasATrabajar;
-				printf("\n\nID PROYECTO:\n\n%d ", proyecto[k].idProyecto);
+				if(programador[i].idProgramador==proyectoProgramador[k].idProgramador)
+				{
+					auxHorasATrabajar=proyectoProgramador[k].horasATrabajar;
+					printf("\n\nID PROYECTO:\n\n%d ", proyecto[k].idProyecto);
+				}
 			}
+			gananciaTotalProyecto=auxPrecioXHora*auxHorasATrabajar;
+			printf("\n\nGANANCIA TOTAL POR PROYECTO:\n\n%d ", gananciaTotalProyecto);
 		}
-		gananciaTotalProyecto=auxPrecioXHora*auxHorasATrabajar;
-        printf("\n\nGANANCIA TOTAL POR PROYECTO:\n\n%d ", gananciaTotalProyecto);
     }
 
 }
@@ -750,4 +762,96 @@ void saberPoyectoMasDemandante(eProyectoProgramador proyectoProgramador[], int t
             }
         }
     }
+}
+
+/** \brief FUNCION MOSTRAR PROYECTOS Y VALOR
+ *
+ * \param eProyectoProgramador Utiliza la estructura relacional
+ * \param tamPP El tamaño que se le haya asignado al array
+ * \param eProyecto Utiliza la estructura con la informacion de los proyectos
+ * \param tamProye El tamaño que se le haya asignado al array
+ * \param eCategoria Utiliza la estructura con la informacion de las categorias
+ * \param tamCat El tamaño que se le haya asignado al array
+ * \return void
+ *
+ */
+
+ void mostrarProyectosValor(eProgramador programador[], int tamProg, eProyectoProgramador proyectoProgramador[], int tamPP, eProyecto proyecto[], int tamProye, eCategoria categoria[], int tamCat)
+{
+    int i, j, k;
+	int contadorJunior=0;
+	int contadorSemiSenior=0;
+	int contadorSenior=0;
+	int auxiliarValorHJunior;
+	int auxiliarValorHSemiSenior;
+	int auxiliarValorHSenior;
+	int valorJunior=0;
+	int valorSemiSenior=0;
+	int valorSenior=0;
+	int valorTotalProyecto=0;
+
+
+
+	for(i=0;i<tamCat;i++)
+	{
+		if(categoria[i].idCategoria==1)
+		{
+			auxiliarValorHJunior=categoria[i].pagoXHora;
+		}
+		if(categoria[i].idCategoria==2)
+		{
+			auxiliarValorHSemiSenior=categoria[i].pagoXHora;
+		}
+		if(categoria[i].idCategoria==3)
+		{
+			auxiliarValorHSenior=categoria[i].pagoXHora;
+		}
+	}
+
+
+    for(j=0;j<tamProye;j++)
+    {
+        for(i=0;i<tamPP;i++)
+        {
+            if(proyectoProgramador[i].idProyecto==proyecto[j].idProyecto && proyectoProgramador[i].estado!=-1 && proyecto[j].estado!=-1)
+            {
+                for(k=0;k<tamProg;k++)
+                {
+                    if(programador[k].idProgramador==proyectoProgramador[i].idProgramador && programador[k].estado!=-1)
+                    {
+                        if(programador[k].idCategoria==1 && proyectoProgramador[i].horasATrabajar>0)
+                        {
+                            valorJunior=(auxiliarValorHJunior*proyectoProgramador[i].horasATrabajar);
+                        }
+                        if(programador[k].idCategoria==2 && proyectoProgramador[i].horasATrabajar>0)
+                        {
+                            valorSemiSenior=(auxiliarValorHSemiSenior*proyectoProgramador[i].horasATrabajar);
+                        }
+                        if(programador[k].idCategoria==3&& proyectoProgramador[i].horasATrabajar>0)
+                        {
+                            valorSenior=(auxiliarValorHSenior*proyectoProgramador[i].horasATrabajar);
+                        }
+                        printf("%d\n", valorJunior);
+                        printf("%d\n", valorSemiSenior);
+                        printf("%d\n", valorSenior);
+
+                        if(proyectoProgramador[i].idProyecto==proyecto[j].idProyecto && proyectoProgramador[i].estado!=-1 && proyecto[j].estado!=-1 && programador[k].idProgramador==proyectoProgramador[i].idProgramador && programador[k].estado!=-1)
+                        {
+                            printf("\n\-------------------------:\n\n");
+                            printf("\n\nID PROYECTO:\n\n%d ", proyecto[j].idProyecto);
+                            printf("\n\nNOMBRE PROYECTO:\n\n%s ", proyecto[j].nombre);
+                            valorTotalProyecto=valorJunior+valorSemiSenior+valorSenior;
+                            printf("\n\nVALOR PROYECTO:\n\n%d ", valorTotalProyecto);
+                        }
+
+                    }
+
+
+                }
+
+            }
+        }
+
+    }
+
 }
