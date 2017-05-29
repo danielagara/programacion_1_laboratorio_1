@@ -485,3 +485,16 @@ todas las funciones van a empezar con f de file
 primerao vamos a denominar un puntero de tipo file
 FILE* f;
 
+arraylists:
+
+void** solo tiene las direcciones de memoria a las estructuras
+odernamiento fisico no loogico
+no ocupa el stack
+
+
+
+
+
+*tema aparte
+
+fscanf(f,"%[^,],%[^,],%[^,],%s\n",
