@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//FLATA FORMATO MATRIZ(?)
 void inicializarMatriz(float matriz[][13]);
+int validarLineaColectivo(char mensaje[]);
 void mostrarMatrices(float matriz[][13]);
 void calcularTotalXLinea(float matriz[][13]);
 int main()
@@ -17,22 +19,12 @@ int main()
     float totalRecaudado;
 
     inicializarMatriz(planillaColectivos);
+
     do
     {
-        printf("Ingrese el numero de linea: ");
-        fflush(stdin);
-        scanf("%d", &numeroLinea);//fila
+        numeroLinea=validarLineaColectivo("Ingrese el numero de linea: (1 a 3)\n");
 
-
-        printf("Ingrese el numero de coche: ");
-        fflush(stdin);
-        scanf("%d", &numeroCoche);//columna
-        while(numeroCoche>12 || numeroCoche<0)
-        {
-            printf("Ingrese el numero de coche: ");
-            fflush(stdin);
-            scanf("%d", &numeroCoche);
-        }
+        numeroCoche=validarNumeroCoche("Ingrese el numero de coche: (1 a 12)\n");
 
         printf("Ingrese el total recaudado: ");
         fflush(stdin);
@@ -106,12 +98,32 @@ void calcularTotalXLinea(float matriz[][13])
     matriz[2][12]=totalAcumuladoLinea3;
 }
 
-/*int validarLinea()
+int validarLineaColectivo(char mensaje[])
 {
+	int numeroLinea;
+	printf("%s\n", mensaje);
+	fflush(stdin);
+	scanf("%d", &numeroLinea);
     while(numeroLinea>3 || numeroLinea<0)
     {
-        printf("Ingrese el numero de linea: ");
+        printf("Ingrese el numero de linea: (1 a 3)\n");
         fflush(stdin);
         scanf("%d", &numeroLinea);
     }
-}*/
+	return numeroLinea;
+}
+
+int validarNumeroCoche(char mensaje[])
+{
+	int numeroCoche;
+	printf("%s\n", mensaje);
+	fflush(stdin);
+	scanf("%d", &numeroCoche);
+    while(numeroCoche>12 || numeroCoche<0)
+    {
+        printf("Ingrese el numero de coche: (1 a 12)\n");
+        fflush(stdin);
+        scanf("%d", &numeroCoche);
+    }
+	return numeroCoche;
+}
