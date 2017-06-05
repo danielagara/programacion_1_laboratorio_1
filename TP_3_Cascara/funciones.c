@@ -1,13 +1,12 @@
-#ifndef FUNCIONES_H_INCLUDED
-#define FUNCIONES_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
 
+/*
 void altaDeMovie(eMovie* pelicula)
 {
     int i, j;
-    int repetido=0;
+
     pelicula->estado=1;
 
     printf("Ingrese el titulo de la pelicula\n ");
@@ -31,13 +30,40 @@ void altaDeMovie(eMovie* pelicula)
 }
 
 
-void generarPagina(eMovie lista[], char nombre[], int contadorPeliculas)
+void generarPagina(eMovie* lista, char nombre[], int contadorPeliculas)
 {
     for(i=0;i<contadorPeliculas;i++)
     {
         if(vectorPelicula[i].estado==1)
         {
-
+            fprintf(archivoPWeb, "%s","			<div class='row'>\n\n\n");
+            fprintf(archivoPWeb, "%s","			<article class='col-md-4 article-intro'>\n");
+            fprintf(archivoPWeb, "%s","                <a href='#'>\n");
+            fprintf(archivoPWeb, "%s","                    <img class='img-responsive img-rounded' src='");
+            fprintf(archivoPWeb, "%s",lista[i].linkImagen);
+            fprintf(archivoPWeb, "%s","' alt=''>\n");
+            fprintf(archivoPWeb, "%s","                </a>\n");
+            fprintf(archivoPWeb, "%s","                <h3>\n");
+            fprintf(archivoPWeb, "%s","                    <a href='#'>");
+            fprintf(archivoPWeb, "%s", lista[i].titulo);
+            fprintf(archivoPWeb, "%s","</a>\n");
+            fprintf(archivoPWeb, "%s","                </h3>\n");
+            fprintf(archivoPWeb, "%s","				<ul>\n");
+            fprintf(archivoPWeb, "%s","					<li>");
+            fprintf(archivoPWeb, "%s","Género: %s", lista[i].genero);
+            fprintf(archivoPWeb, "%s","</li>\n");
+            fprintf(archivoPWeb, "%s","					<li>");
+            fprintf(archivoPWeb, "%s","Puntaje: %s", lista[i].puntaje);
+            fprintf(archivoPWeb, "%s","</li>\n");
+            fprintf(archivoPWeb, "%s","					<li>");
+            fprintf(archivoPWeb, "%s","Duracion: %s", lista[i].duracion);
+            fprintf(archivoPWeb, "%s","</li>\n");
+            fprintf(archivoPWeb, "%s","				</ul>\n");
+            fprintf(archivoPWeb, "%s","                <p>%s", lista[i].descripcion);
+            fprintf(archivoPWeb, "%s","</p>\n");
+            fprintf(archivoPWeb, "%s","            </article>\n");
+            fprintf(archivoPWeb, "%s","        </div>\n");
+            fprintf(archivoPWeb, "%s","        <!-- /.row -->\n");
         }
     }
-}
+}*/
