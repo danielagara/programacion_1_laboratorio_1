@@ -21,3 +21,25 @@
 
 1498501769 c:\users\daniela garat\desktop\parcial_prueba2\tramite.h
 
+1498498461 source:c:\users\daniela garat\desktop\segundo parcial\parcial_prueba2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1497652111 c:\users\daniela garat\desktop\segundo parcial\parcial_prueba2\arraylist.h
+
+1498511508 source:c:\users\daniela garat\desktop\segundo parcial\parcial_prueba2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tramite.h"
+
+1498511508 c:\users\daniela garat\desktop\segundo parcial\parcial_prueba2\tramite.h
+
+1498511837 source:c:\users\daniela garat\desktop\segundo parcial\parcial_prueba2\tramite.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tramite.h"
+

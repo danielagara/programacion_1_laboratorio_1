@@ -44,7 +44,8 @@ int main()
         printf("3- PROXIMO CLIENTE\n");
         printf("4- LISTAR\n");
         printf("5- INFORMAR\n");
-        printf("6- Salir\n");
+        printf("6- GENERAR ARCHIVO CSV\n");
+        printf("7- Salir\n");
 
         scanf("%d",&opcion);
 
@@ -61,7 +62,6 @@ int main()
                 nuevoTramite=newTramite(DNI,tipoTramite,atendido,numTurno);
                 tramiteUrgente->add(tramiteUrgente,nuevoTramite);
                 printf("SU TURNO ES-> %d \n", numTurno);
-                system("pause");
                 break;
             case 2:
                 //NUEVO TRAMITE REGULAR
@@ -74,7 +74,6 @@ int main()
                 nuevoTramite=newTramite(DNI,tipoTramite,atendido, numTurno);
                 tramiteRegular->add(tramiteRegular,nuevoTramite);
                 printf("SU TURNO ES-> %d \n", numTurno);
-                system("pause");
                 break;
             case 3:
                 //PROXIMO CLIENTE
@@ -103,8 +102,6 @@ int main()
                         printf("NO HAY QUEDAN TRAMITES POR ATENDER\n");
                     }
                 }
-                printf("OK\n");
-                system("pause");
                 break;
             case 4://ERROR EN SEGUNDO PRINT
                 //LISTA PERSONAS SIN ATENDER
@@ -137,7 +134,6 @@ int main()
                 {
                     printf("NO HAY REGULARES SIN ATENDER\n");
                 }
-                system("pause");
                 break;
             case 5:
                 //CLIENTES ATENDIDOS
@@ -172,13 +168,17 @@ int main()
                 {
                     printf("NO SE HAN ATENDIDO TRAMITES REGULARES\n");
                 }
-                system("pause");
                 break;
             case 6:
+                //GUARDAR TRAMITES EN ARCHIVOS
+                guardarArchivos(tramiteUrgente,tramiteRegular,turnosUrgentes,turnosRegulares);
+                printf("OK\n");
+                break;
+            case 7:
             seguir='n';
             break;
         }
-
+        system("pause");
     }
 
     return 0;

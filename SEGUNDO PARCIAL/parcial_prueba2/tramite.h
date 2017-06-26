@@ -13,4 +13,8 @@ Tramite* newTramite(int DNI, char tipoTramite,int atendido,int numTurno);
 
 int comparaTramite(void* pTramiteA,void* pTramiteB);
 
+void escribirEnArchivoElArray(FILE* archivoTramites,ArrayList* lista);
+
+void guardarArchivos(ArrayList* tramiteUrgente,ArrayList* tramiteRegular,ArrayList* turnosUrgentes,ArrayList* turnosRegulares);
+
 #endif // TRAMITE_H_INCLUDED
