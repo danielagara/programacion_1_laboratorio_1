@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1498519936 source:d:\garat.daniela\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1498514050 d:\garat.daniela\arraylist.h
+
+1498520390 source:d:\garat.daniela\funcionestareas.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"funcionesTareas.h"
+
+1498518730 d:\garat.daniela\funcionestareas.h
+
+1498519936 source:d:\garat.daniela\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"funcionesTareas.h"
+
